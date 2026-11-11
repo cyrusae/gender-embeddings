@@ -104,7 +104,7 @@ Frozen lists are rebuilt by `scripts/zero_ref_lists.py` (candidates, v0) and
 
 ## Licences
 
-- **Code:** TBD by the PI.
+- **Code:** MIT (`LICENSE`).
 - **Wiktionary-derived data** (`data/lexicon/*_nouns.csv`, `data/stimuli/phase2_final_v4.csv`): CC BY-SA 4.0 (Wiktionary, via kaikki.org).
 - **Glasgow Norms:** CC BY 4.0 (publisher's supplementary file); fetched, not shipped (`docs/FETCH-GLASGOW.md`).
 - **Upstream code and embeddings** (Zhou et al.; Omrani Sabbaghi & Caliskan; MUSE; fastText): not
