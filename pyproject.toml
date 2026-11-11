@@ -1,0 +1,22 @@
+[project]
+name = "gender-embeddings"
+version = "0.1.0"
+description = "Static-embedding replication and extension of Zhou et al. (2019) on grammatical and social gender"
+requires-python = ">=3.10"
+license = { text = "TBD (code: PI to decide); data derived from Wiktionary is CC BY-SA 4.0" }
+# Imports used by scripts/*.py (checked by grep, 2026-11-10). Scripts are run as
+# `python scripts/<name>.py` or with `uv run --no-project --with ...`; no package is built.
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+    "nltk",        # scripts/_wordnet.py (WordNet corpus downloaded on first use)
+]
+
+[project.optional-dependencies]
+notebooks = ["nbconvert", "ipykernel"]  # scripts/gg_dump.py, scripts/gg_heldout.py execute notebooks
+
+[tool.uv]
+package = false
