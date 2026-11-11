@@ -5,12 +5,11 @@ type: software
 version: 0.1.0
 date-released: 2026-11-10
 authors:
-  - family-names: "[surname]"
-    given-names: "[given names]"
-    orcid: "https://orcid.org/0000-0000-0000-0000"   # optional; delete the line if none
-    # affiliation: "[optional]"
+  - family-names: "Eosphoros"
+    given-names: "Cyrus"
+    affiliation: "Seattle University"
 license: MIT   # code only; data/lexicon/ is CC-BY-SA-4.0 (Wiktionary-derived), see README
-repository-code: "[GitHub URL once published]"
+repository-code: "https://github.com/cyrusae/gender-embeddings"
 abstract: "Reproduction and reanalysis of Zhou et al. (2019) and Omrani Sabbaghi & Caliskan (2022), and measurements of grammatical and social gender on Spanish and French inanimate nouns in static word embeddings."
 keywords:
   - word embeddings
