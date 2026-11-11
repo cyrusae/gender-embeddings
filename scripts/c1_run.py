@@ -1,5 +1,5 @@
-"""C1: Zhou et al.'s inanimate-noun score after Zhou et al.'s mitigation (embeddings/docs/c1-prereg.md,
-adopted 2026-11-08). Test nouns: frozen embeddings/data/c1_nouns_es_v1.csv.
+"""C1: Zhou et al.'s inanimate-noun score after Zhou et al.'s mitigation (docs/c1-prereg.md,
+adopted 2026-11-08). Test nouns: frozen data/c1_nouns_es_v1.csv.
 
 Arms: 1 original; 2 Shift Ori "as implemented" = OUR RECONSTRUCTION (released code never applies
 Eq. 2; see docs/zhou-shift-identity.md) (occupation pairs shifted, the semantic direction
@@ -14,7 +14,7 @@ s(w) = mean cos(w, male words) − mean cos(w, female words); Δ = mean s(masc) 
 Directions (semantic PCA, grammatical LinearSVC, orthogonalised) from the first 50k words, as in
 `zhou_shift.py`; vocab 50k primary, 200k sensitivity.
 
-    uv run --no-project --python 3.12 --with numpy,scikit-learn,pandas python embeddings/scripts/c1_run.py [es|fr]
+    uv run --no-project --python 3.12 --with numpy,scikit-learn,pandas python scripts/c1_run.py [es|fr]
 French (Addendum A): French attributes = Zhou's French definitional pairs; spelling split = fr_suffix.
 """
 

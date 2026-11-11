@@ -14,11 +14,13 @@ ES per pair two readings, since "remove the outer absolute" is ambiguous at pair
 Raw dot products for Spanish (as their mweat), cosine for English. Spearman ρ with a permutation
 p-value (10,000, seed 0), over Zhou's 58 pairs (published) and the 54-pair clean list.
 
-    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python embeddings/scripts/zhou_sec43_44.py
+    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python scripts/zhou_sec43_44.py
 """
 
 import json
 from pathlib import Path
+
+import paths
 
 import numpy as np
 import pandas as pd
@@ -28,7 +30,7 @@ from zhou_wordpair import spaces
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results/zhou_sec43_44"
-DD = Path("/Volumes/Lexar/gbleed/shared/embeddings/muse/dictionaries")
+DD = paths.muse_dir() / "dictionaries"
 TABLE2 = {("en-es", "original"): (79.2, 89.0), ("en-es", "shift_ori"): (80.7, 90.3), ("en-es", "hybrid_ori"): (80.7, 90.3),
           ("es-en", "original"): (79.2, 89.0), ("es-en", "shift_ori"): (79.2, 89.0), ("es-en", "hybrid_ori"): (79.2, 89.0),
           ("en-fr", "original"): (78.2, 89.4), ("en-fr", "shift_ori"): (79.9, 91.1), ("en-fr", "hybrid_ori"): (79.9, 91.1),

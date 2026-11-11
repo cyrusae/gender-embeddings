@@ -6,7 +6,7 @@ s(w) = mean cos(w, their man words) − mean cos(w, their woman words), before a
 vocabulary, minus any word in their erasure training pairs. Same model and reading rule as
 gvalnorm_run.py.
 
-    uv run --no-project --python 3.12 --with numpy,pandas,scipy python embeddings/scripts/gvalnorm_omrani.py es 14 28
+    uv run --no-project --python 3.12 --with numpy,pandas,scipy python scripts/gvalnorm_omrani.py es 14 28
 """
 
 import json

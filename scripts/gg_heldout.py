@@ -8,9 +8,9 @@ never used to fit any direction) and writes before/after effect sizes for both s
 Runs in a scratch copy of the clone so the upstream Results/ folder is untouched.
 
     uv run --no-project --python 3.12 --with numpy,scipy,scikit-learn,pandas,openpyxl,statsmodels,\
-matplotlib,nbconvert,ipykernel python embeddings/scripts/gg_heldout.py [--minfix] 14 28
+matplotlib,nbconvert,ipykernel python scripts/gg_heldout.py [--minfix] 14 28
 
---minfix (2026-11-08): "bugs fixed, method unchanged" (see embeddings/docs/upstream-issues.md):
+--minfix (2026-11-08): "bugs fixed, method unchanged" (see docs/upstream-issues.md):
   O2/O3/O14 deduplicate the noun lists and drop words listed under both genders;
   O5 score held-out accuracy on real rows only (no zero padding);
   O16 NFC-normalise ValNorm.py so accented attribute words are found.
@@ -24,12 +24,12 @@ import sys
 import unicodedata
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "embeddings/external/GG_Disentangling"
-OUT = ROOT / "embeddings/results/gg_heldout_es"
+ROOT = Path(__file__).resolve().parents[1]
+SRC = ROOT / "external/GG_Disentangling"
+OUT = ROOT / "results/gg_heldout_es"
 MINFIX = "--minfix" in sys.argv
 if MINFIX:
-    OUT = ROOT / "embeddings/results/gg_minfix_es"
+    OUT = ROOT / "results/gg_minfix_es"
 
 EXTRA = r'''
 import json as _json

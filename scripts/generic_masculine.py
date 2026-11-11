@@ -12,7 +12,7 @@ Bootstrap 10,000 (seed 0) over pairs, epicene words within gender, common nouns,
 definitional pairs (the PCA axis is re-estimated in every draw; g fixed). FR confirmatory, ES
 replication of the exploratory observation. Floor: 15 usable pairs.
 
-    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python embeddings/scripts/generic_masculine.py
+    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python scripts/generic_masculine.py
 """
 
 import json

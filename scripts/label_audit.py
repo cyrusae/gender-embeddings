@@ -9,7 +9,7 @@
     (data/stimuli/phase2_final_v4.csv): regular -o/-a nouns vs exceptions (el problema, la mano,
     el día...). If the direction is mostly "ends in -o vs -a", exceptions fall below chance.
 
-    uv run --no-project --python 3.12 --with numpy,scikit-learn python embeddings/scripts/label_audit.py
+    uv run --no-project --python 3.12 --with numpy,scikit-learn python scripts/label_audit.py
 """
 
 import csv
@@ -18,13 +18,15 @@ import json
 from collections import Counter
 from pathlib import Path
 
+import paths
+
 import numpy as np
 from sklearn.preprocessing import normalize
 from sklearn.svm import LinearSVC
 
-ROOT = Path(__file__).resolve().parents[2]
-EXT = ROOT / "embeddings/external"
-OUT = ROOT / "embeddings/results/label_audit_es"
+ROOT = Path(__file__).resolve().parents[1]
+EXT = ROOT / "external"
+OUT = ROOT / "results/label_audit_es"
 
 
 def read_list(path, strip3=False):
@@ -125,8 +127,8 @@ def exceptions(clf, scale, train_words, E, w2i, p2):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    lex = {r["lemma"]: r for r in csv.DictReader(open(ROOT / "data/lexicon/es_nouns.csv", encoding="utf-8"))}
-    p2 = list(csv.DictReader(open(ROOT / "data/stimuli/phase2_final_v4.csv", encoding="utf-8")))
+    lex = {r["lemma"]: r for r in csv.DictReader(open(paths.LEXICON / "es_nouns.csv", encoding="utf-8"))}
+    p2 = list(csv.DictReader(open(paths.STIMULI / "phase2_final_v4.csv", encoding="utf-8")))
     lists = {
         "omrani2022": (read_list(EXT / "GG_Disentangling/data/nouns/es-masc-v2.txt"),
                        read_list(EXT / "GG_Disentangling/data/nouns/es-fem-v2.txt")),
@@ -138,7 +140,7 @@ def main():
         rows, summ = audit(name, m, f, lex)
         allrows += rows
         out[name] = {"label_audit": summ}
-    E, w2i = load_vec(EXT / "GG_Disentangling/data/embeddings/cc.es.300.vec", 1_000_000)
+    E, w2i = load_vec(EXT / "GG_Disentangling/data/cc.es.300.vec", 1_000_000)
     clf, scale, tw = direction(E, w2i, *lists["omrani2022"], colnorm=True)
     out["omrani2022"]["exception_test"] = exceptions(clf, scale, tw, E, w2i, p2)
     del E

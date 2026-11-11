@@ -8,24 +8,24 @@ Every list excludes Zhou et al.'s occupation words and definitional/attribute wo
 common pools are deliberately broad: the PI marks pi_keep (rule-based pools are noisy: printer-type
 senses, proper names, plurals).
 
-    uv run --no-project --python 3.12 --with pandas python embeddings/scripts/zero_ref_lists.py
+    uv run --no-project --python 3.12 --with pandas python scripts/zero_ref_lists.py
 """
 
 import json
 import re
 from pathlib import Path
 
+import paths
+
 import numpy as np
 import pandas as pd
 
-import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
-from gbleed.lexicon import _wordnet  # noqa: E402
+from _wordnet import _wordnet
 
-ROOT = Path(__file__).resolve().parents[2]
-Z = ROOT / "embeddings/external/Bias_in_Gendered_Languages"
-OUT = ROOT / "embeddings/data"
+ROOT = Path(__file__).resolve().parents[1]
+Z = ROOT / "external/Bias_in_Gendered_Languages"
+OUT = ROOT / "data"
 # Glosses that denote a sex (hombre, madre, rey) or a sexual role: not sex-neutral, so not epicene.
 SEXED = re.compile(
     r"\b(?:man|men|woman|women|male|female|boy|girl|husband|wife|mother|father|son|daughter|brother|"
@@ -66,7 +66,7 @@ def person_share(wn, concept):
 
 
 def build(lang):
-    d = pd.read_csv(ROOT / f"data/lexicon/{lang}_nouns.csv", low_memory=False)
+    d = pd.read_csv(paths.LEXICON / f"{lang}_nouns.csv", low_memory=False)
     wn = _wordnet()
     d["person_share"] = d["concept_en"].map(lambda c: person_share(wn, c))
     # persons: most (> half) WordNet usage of the gloss is a person, or the gloss itself says person (no WordNet entry)

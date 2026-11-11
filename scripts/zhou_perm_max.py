@@ -1,5 +1,5 @@
 """Zhou MWEAT permutation test: is the ORIGINAL statistic also the maximum of its own permutation
-distribution? (exploratory, 2026-11-08; prompted by the Gemini blind check). Run from embeddings/scripts
+distribution? (exploratory, 2026-11-08; prompted by the Gemini blind check). Run from scripts
 with PYTHONPATH=. ; French variant: swap es->fr and use the FR definitional pairs as attributes."""
 import random, numpy as np
 from zhou_shift import WEAT_F, WEAT_M, Z, load_vec

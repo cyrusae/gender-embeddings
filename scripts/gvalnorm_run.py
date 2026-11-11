@@ -1,4 +1,4 @@
-"""Gender ValNorm on inanimate nouns, MUSE arms (embeddings/docs/gvalnorm-prereg.md, adopted 2026-11-08;
+"""Gender ValNorm on inanimate nouns, MUSE arms (docs/gvalnorm-prereg.md, adopted 2026-11-08;
 French: Addendum A). The Omrani Sabbaghi & Caliskan erasure arm is a separate script.
 
 Per-noun scores s(w) come from C1 (`results/c1_<lang>/c1_per_noun.csv`: arms × attribute sets).
@@ -6,12 +6,14 @@ Nouns: frozen C1 list ∩ Glasgow (concept_en, homonym senses averaged). Model p
 vocab, on z-scored variables: s_z = β_G·masc + β_H·GEND_z + β_F·zipf_z. 95% bootstrap CIs over nouns
 (2,000, seed 0). English anchor: the same concepts' English words in English MUSE, pilot attributes.
 
-    uv run --no-project --python 3.12 --with numpy,pandas,scipy python embeddings/scripts/gvalnorm_run.py [es|fr]
+    uv run --no-project --python 3.12 --with numpy,pandas,scipy python scripts/gvalnorm_run.py [es|fr]
 """
 
 import json
 import sys
 from pathlib import Path
+
+import paths
 
 import numpy as np
 import pandas as pd
@@ -19,7 +21,7 @@ from gvalnorm_en import A, B, glasgow, load
 from scipy.stats import pearsonr
 
 ROOT = Path(__file__).resolve().parents[1]
-MUSE_EN = Path("/Volumes/Lexar/gbleed/shared/embeddings/muse/wiki.multi.en.vec")
+MUSE_EN = paths.muse_dir() / "wiki.multi.en.vec"
 
 
 def z(x):

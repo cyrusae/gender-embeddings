@@ -3,10 +3,10 @@
 vectors before/after erasure for our Glasgow-matched C1 nouns and their attribute words.
 
     uv run --no-project --python 3.12 --with numpy,scipy,scikit-learn,pandas,openpyxl,statsmodels,\
-matplotlib,nbconvert,ipykernel python embeddings/scripts/gg_dump.py es 14 28
+matplotlib,nbconvert,ipykernel python scripts/gg_dump.py es 14 28
     ... gg_dump.py fr 27
 
-Output: embeddings/results/gg_dump_<lang>/vectors_iter<n>.npz (+ executed notebook).
+Output: results/gg_dump_<lang>/vectors_iter<n>.npz (+ executed notebook).
 """
 
 import json
@@ -18,7 +18,7 @@ from pathlib import Path
 sys.argv.append("--minfix")  # gg_heldout reads its mode from argv at import
 import gg_heldout as gh  # noqa: E402
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 
 DUMP = r'''
 import json as _json
@@ -41,7 +41,7 @@ print("dumped", len(_ws), "of", len(_want), "words;", len(_am), "+", len(_af), "
 
 
 def run(lang: str, n: int, words: list) -> None:
-    out = ROOT / f"embeddings/results/gg_dump_{lang}"
+    out = ROOT / f"results/gg_dump_{lang}"
     out.mkdir(parents=True, exist_ok=True)
     work = out / f"work_iter{n}"
     if work.exists():
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     lang, iters = args[0], [int(a) for a in args[1:]]
     import pandas as pd
 
-    nouns = pd.read_csv(ROOT / f"embeddings/results/gvalnorm_{lang}/gvalnorm_nouns.csv")
+    nouns = pd.read_csv(ROOT / f"results/gvalnorm_{lang}/gvalnorm_nouns.csv")
     words = sorted(set(nouns["lemma"]))
     for n in iters:
         run(lang, n, words)

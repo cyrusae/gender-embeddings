@@ -8,7 +8,7 @@ Panel B  corrected: true pair-midpoint PCA; d_g = LinearSVC on our Wiktionary-la
 Panel C  semantic-axis projections of the 58 masculine vs 58 feminine forms, distances from the
          epicene zero point rather than from 0 (the skew Zhou's Fig. 1 describes).
 
-    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn,matplotlib python embeddings/scripts/zhou_figures.py
+    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn,matplotlib python scripts/zhou_figures.py
 """
 
 import json

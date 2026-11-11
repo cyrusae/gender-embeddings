@@ -22,7 +22,7 @@ Spaces (approximations, see zhou_hybrid.py): Original = MUSE as released; Shift 
 the target language with the original English; Hybrid Ori = target aligned (Procrustes) onto hard-
 debiased English, then shifted. Directions as c1_run.directions (their recipe).
 
-    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python embeddings/scripts/zhou_wordpair.py
+    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python scripts/zhou_wordpair.py
 """
 
 import json

@@ -9,7 +9,7 @@ nouns. A_R = |T_m − n c_R| − |T_f − n c_R| (> 0: masculine forms lean furt
 attribute words. Spaces: original, Shift Ori (our rebuild). Yardsticks: native attributes
 (primary), English attributes in the aligned MUSE space.
 
-    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python embeddings/scripts/zhou_zero_point.py [es|fr]
+    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python scripts/zhou_zero_point.py [es|fr]
 """
 
 import json

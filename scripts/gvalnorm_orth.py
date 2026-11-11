@@ -4,7 +4,7 @@ Rebuilds C1's MUSE arms exactly as c1_run.py does, then scores each Glasgow-matc
 s⊥(w) = unit(w) · a⊥, a⊥ = a − (a·ds)ds, a = mean(unit male attr) − mean(unit female attr),
 ds = the arm's own orthogonalised semantic direction. Same model and reading as gvalnorm_run.py.
 
-    uv run --no-project --python 3.12 --with numpy,scikit-learn,pandas,scipy python embeddings/scripts/gvalnorm_orth.py [es|fr]
+    uv run --no-project --python 3.12 --with numpy,scikit-learn,pandas,scipy python scripts/gvalnorm_orth.py [es|fr]
 """
 
 import json

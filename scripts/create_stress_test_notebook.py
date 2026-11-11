@@ -4,10 +4,12 @@
 import json
 from pathlib import Path
 
+import paths
+
 ROOT = Path(__file__).resolve().parents[1]
 Z = ROOT / "external/Bias_in_Gendered_Languages"
 DW = ROOT / "external/debiaswe/data"
-EMB_DIR = Path("/Volumes/Lexar/gbleed/shared/embeddings/muse")
+EMB_DIR = paths.muse_dir()
 
 def load_vec(path, nmax=50000):
     vecs, words, w2i = [], [], {}
@@ -69,11 +71,13 @@ cells.append(make_cell("markdown", """### Setup & Loading Data
 Load the top 50,000 vectors from MUSE bilingual FastText embeddings (Spanish, French, English) and target lists."""))
 
 setup_code = """import json
+import os
 from pathlib import Path
+
 
 Z = Path('external/Bias_in_Gendered_Languages')
 DW = Path('external/debiaswe/data')
-EMB_DIR = Path('/Volumes/Lexar/gbleed/shared/embeddings/muse')
+EMB_DIR = Path(os.environ.get('EMB_STORE', 'store')) / 'muse'
 
 def load_vec(path, nmax=50000):
     vecs, words, w2i = [], [], {}

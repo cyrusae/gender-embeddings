@@ -13,11 +13,13 @@ form; R_o = log(rank_f / rank_m) in frequency order; H_o feminine form also a no
 S_o = stereotype (BLS primary, Glasgow, EU-27). Standardised OLS, bootstrap over occupations.
 Alignment ablation: Procrustes onto original English, three dictionaries.
 
-    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python embeddings/scripts/wordpair_mechanism.py
+    uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python scripts/wordpair_mechanism.py
 """
 
 import json
 from pathlib import Path
+
+import paths
 
 import numpy as np
 import pandas as pd
@@ -26,7 +28,6 @@ from zhou_shift import Z, load_vec
 from zhou_wordpair import CUES, FEM, K, spaces
 
 ROOT = Path(__file__).resolve().parents[1]
-GIT = ROOT.parent
 OUT = ROOT / "results/wordpair_mechanism"
 N_BOOT, SEED = 10_000, 0
 
@@ -96,7 +97,7 @@ def ols_boot(df, y, xs, rng):
 
 
 def glasgow():
-    g = pd.read_csv(GIT / "data/raw/glasgow/glasgow_norms_scott2019.csv", header=[0, 1])
+    g = pd.read_csv(paths.glasgow_csv(), header=[0, 1])
     words = g.iloc[:, 0].astype(str).str.lower()
     col = [i for i, c in enumerate(g.columns) if c[0] == "GEND"][0]
     return dict(zip(words, pd.to_numeric(g.iloc[:, col], errors="coerce")))

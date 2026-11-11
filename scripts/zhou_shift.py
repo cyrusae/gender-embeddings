@@ -12,7 +12,7 @@ _weat_pval cell 230). Notebook quirks kept deliberately (they define the publish
 Usage: `... zhou_shift.py [es|fr]` (French attributes = the French definitional pairs, as cell 215).
 Table 1 (ES): Original 3.6918 (p 0.000); Shift Ori 0.3090 (p 0.113); Hybrid Ori 0.3090 (p 0.733).
 
-    uv run --no-project --python 3.12 --with numpy,scikit-learn python embeddings/scripts/zhou_shift.py
+    uv run --no-project --python 3.12 --with numpy,scikit-learn python scripts/zhou_shift.py
 """
 
 import io

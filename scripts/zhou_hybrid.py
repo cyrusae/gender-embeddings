@@ -14,11 +14,13 @@ Table 1 (ES): Original 3.6918; De-Align 3.5748 (p 0.001); Hybrid Ori 0.3090 (p 0
 Note: an orthogonal map leaves all Spanish-internal dot products unchanged, so with Procrustes
 De-Align must equal Original and Hybrid Ori must equal Shift Ori on this Spanish-only statistic.
 
-    uv run --no-project --python 3.12 --with numpy,scikit-learn python embeddings/scripts/zhou_hybrid.py
+    uv run --no-project --python 3.12 --with numpy,scikit-learn python scripts/zhou_hybrid.py
 """
 
 import json
 from pathlib import Path
+
+import paths
 
 import numpy as np
 from sklearn.svm import LinearSVC
@@ -27,7 +29,7 @@ from zhou_shift import Z, load_vec, nouns, pca_dir, pval, shift
 
 ROOT = Path(__file__).resolve().parents[1]
 DW = ROOT / "external/debiaswe/data"
-DICT = Path("/Volumes/Lexar/gbleed/shared/embeddings/muse/dictionaries/es-en.txt")
+DICT = paths.muse_dir() / "dictionaries" / "es-en.txt"
 OUT = ROOT / "results/zhou_hybrid_es"
 
 

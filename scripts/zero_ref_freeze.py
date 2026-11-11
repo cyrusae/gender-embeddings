@@ -10,17 +10,19 @@ additions with pi_status add (strict) / add_broad (broad); inanimate rows droppe
 False or if the PI moved them to a person set (eminencia) or flagged them as persons/groups
 (voyer, philharmonie, already pi_keep False).
 
-    uv run --no-project --python 3.12 --with pandas python embeddings/scripts/zero_ref_freeze.py
+    uv run --no-project --python 3.12 --with pandas python scripts/zero_ref_freeze.py
 """
 
 import hashlib
 import re
 from pathlib import Path
 
+import paths
+
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT / "embeddings/data"
+ROOT = Path(__file__).resolve().parents[1]
+DATA = ROOT / "data"
 LOAN = re.compile(r"english|french|loanword|language|reinstated", re.IGNORECASE)
 MOVED_OUT_OF_INANIMATE = {"es": {"eminencia"}, "fr": set()}
 
@@ -46,7 +48,7 @@ def freeze(lang):
         rows.append(a[["set", "lemma", "gender", "tier", "pi_comment"]])
     f = pd.concat(rows, ignore_index=True)
     assert not f["lemma"].duplicated().any(), f[f["lemma"].duplicated()]["lemma"].tolist()
-    lx = pd.read_csv(ROOT / f"data/lexicon/{lang}_nouns.csv", low_memory=False)
+    lx = pd.read_csv(paths.LEXICON / f"{lang}_nouns.csv", low_memory=False)
     lx = lx.drop_duplicates("lemma").set_index("lemma")
     f["concept_en"] = f["lemma"].map(lx["concept_en"])
     f["zipf"] = f["lemma"].map(lx["zipf"])

@@ -6,7 +6,7 @@ orthogonalised semantic direction), so it can change w · a only through a's com
 Reports cos(a, ds), cos(a, d_pca), and MWEAT recomputed with a's ds-component removed, before and
 after Shift; plus which words are shifted vs scored (from the notebook cells).
 
-    uv run --no-project --python 3.12 --with numpy,scikit-learn python embeddings/scripts/zhou_construct.py
+    uv run --no-project --python 3.12 --with numpy,scikit-learn python scripts/zhou_construct.py
 """
 
 import json

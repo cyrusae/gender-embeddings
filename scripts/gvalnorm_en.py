@@ -10,24 +10,26 @@ Scores per word: (1) mean cos(w, B) − mean cos(w, A) (Lewis & Lupyan's mean di
 male-positive to match GEND 7 = masculine); (2) SC-WEAT effect size (ValNorm's score): that
 difference divided by the standard deviation of cos(w, x) over x in A ∪ B.
 
-    uv run --no-project --python 3.12 --with numpy,pandas,scipy python embeddings/scripts/gvalnorm_en.py
+    uv run --no-project --python 3.12 --with numpy,pandas,scipy python scripts/gvalnorm_en.py
 """
 
 import json
 import re
 from pathlib import Path
 
+import paths
+
 import numpy as np
 import pandas as pd
 from scipy.stats import pearsonr, spearmanr
 
-ROOT = Path(__file__).resolve().parents[2]
-GLASGOW = ROOT / "data/raw/glasgow/glasgow_norms_scott2019.csv"
+ROOT = Path(__file__).resolve().parents[1]
+GLASGOW = paths.glasgow_csv()
 EMB = {
-    "muse_wiki_en": Path("/Volumes/Lexar/gbleed/shared/embeddings/muse/wiki.multi.en.vec"),
-    "fasttext_cc_en": Path("/Volumes/Lexar/gbleed/shared/embeddings/fasttext_cc/cc.en.300.vec"),
+    "muse_wiki_en": paths.muse_dir() / "wiki.multi.en.vec",
+    "fasttext_cc_en": paths.fasttext_cc_dir() / "cc.en.300.vec",
 }
-OUT = ROOT / "embeddings/results/gvalnorm_en"
+OUT = ROOT / "results/gvalnorm_en"
 A = ["female", "woman", "girl", "sister", "she", "her", "hers", "daughter"]
 B = ["male", "man", "boy", "brother", "he", "him", "his", "son"]
 

@@ -1,11 +1,11 @@
-"""Freeze the C1 test-noun list (embeddings/docs/c1-prereg.md, adopted 2026-11-08).
+"""Freeze the C1 test-noun list (docs/c1-prereg.md, adopted 2026-11-08).
 
 Rule: Wiktionary lexicon (data/lexicon/es_nouns.csv) nouns with a single gender (m/f), animacy
 inanimate, no multi_type, no also_form, no also_pos (PI: drop words that are also another part of
 speech), in the first 200,000 MUSE wiki.multi.es words, and not in any of Zhou et al.'s word lists
 (noun lists, definitional pairs, attribute words, occupation pairs). `in_50k` marks the primary set.
 
-    python3 embeddings/scripts/c1_nouns.py [es|fr]   (French: addendum in docs/c1-prereg.md)
+    python3 scripts/c1_nouns.py [es|fr]   (French: addendum in docs/c1-prereg.md)
 """
 
 import csv
@@ -13,9 +13,11 @@ import hashlib
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-Z = ROOT / "embeddings/external/Bias_in_Gendered_Languages"
-OUT = ROOT / "embeddings/data/c1_nouns_{lang}_v1.csv"
+import paths
+
+ROOT = Path(__file__).resolve().parents[1]
+Z = ROOT / "external/Bias_in_Gendered_Languages"
+OUT = ROOT / "data/c1_nouns_{lang}_v1.csv"
 ATTR = ["hombre", "niño", "padre", "masculino", "abuelo", "esposo", "hijo", "tio",
         "niña", "femenina", "tía", "hija", "esposa", "mujer", "madre", "abuela"]  # fmt: skip
 
@@ -35,7 +37,7 @@ def main(lang="es"):
     for line in open(Z / f"{lang.upper()}_occupation_words_with_EN_translations", encoding="utf-8"):
         excl |= set(line.rstrip("\n").split("\t")[:2])
     rows = []
-    for r in csv.DictReader(open(ROOT / f"data/lexicon/{lang}_nouns.csv", encoding="utf-8")):
+    for r in csv.DictReader(open(paths.LEXICON / f"{lang}_nouns.csv", encoding="utf-8")):
         w = r["lemma"]
         if (r["gender"] in ("m", "f") and r["animacy"] == "inanimate" and not r["multi_type"]
                 and not r["also_form"] and not r["also_pos"] and w in rank and w not in excl):  # fmt: skip

@@ -11,7 +11,7 @@ words, act words, epicene reference words (within gender), common words and attr
 Robustness: leave-one-out over crime words; inanimate anchor; 50k-only crime words; without the
 sex-coded words (capo, gangster).
 
-    uv run --no-project --python 3.12 --with numpy,pandas python embeddings/scripts/crime_probe.py [es|fr]
+    uv run --no-project --python 3.12 --with numpy,pandas python scripts/crime_probe.py [es|fr]
 """
 
 import json
