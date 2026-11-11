@@ -5,8 +5,9 @@
 #                     + MUSE bilingual dictionaries (en-es, es-en, es-fr, en-fr, fr-en)
 #   Omrani Sabbaghi & Caliskan 2022: fastText Common Crawl cc.{es,fr,de,it,pl,en}.300.vec
 # Resumable (curl -C -). Sizes: MUSE ~0.63 GB each; cc ~1.3 GB gzipped, ~4.5 GB unzipped each.
+# Store location: $EMB_STORE (default ./store, git-ignored); layout matches scripts/paths.py.
 set -euo pipefail
-STORE=${GBLEED_STORE:-/Volumes/Lexar/gbleed}/shared/embeddings
+STORE=${EMB_STORE:-store}
 EXT=$(cd "$(dirname "$0")/../external" && pwd)
 mkdir -p "$STORE/muse/dictionaries" "$STORE/fasttext_cc"
 get() { curl -sSfL --retry 5 -C - -o "$2" "$1"; echo "got $(basename "$2") $(du -h "$2" | cut -f1)"; }
@@ -27,9 +28,11 @@ done
 shasum -a 256 "$STORE"/muse/*.vec "$STORE"/muse/dictionaries/*.txt "$STORE"/fasttext_cc/*.vec > "$STORE/SHA256SUMS"
 
 # links where the notebooks look (Zhou: ./data/wiki.multi.xx.vec.txt and ./en-es.txt etc.)
+# The store path is made absolute so the links resolve from any working directory.
+ABS=$(cd "$STORE" && pwd)
 Z="$EXT/Bias_in_Gendered_Languages"; mkdir -p "$Z/data"
-for l in en es fr de; do ln -sf "$STORE/muse/wiki.multi.$l.vec" "$Z/data/wiki.multi.$l.vec.txt"; done
-for d in en-es es-en es-fr; do ln -sf "$STORE/muse/dictionaries/$d.txt" "$Z/$d.txt"; done
+for l in en es fr de; do ln -sf "$ABS/muse/wiki.multi.$l.vec" "$Z/data/wiki.multi.$l.vec.txt"; done
+for d in en-es es-en es-fr; do ln -sf "$ABS/muse/dictionaries/$d.txt" "$Z/$d.txt"; done
 G="$EXT/GG_Disentangling/data/embeddings"; mkdir -p "$G"
-for l in es fr de it pl en; do ln -sf "$STORE/fasttext_cc/cc.$l.300.vec" "$G/cc.$l.300.vec"; done
+for l in es fr de it pl en; do ln -sf "$ABS/fasttext_cc/cc.$l.300.vec" "$G/cc.$l.300.vec"; done
 echo "=== EMBEDDINGS done"
