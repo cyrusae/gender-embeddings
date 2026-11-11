@@ -6,3 +6,6 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 ._*
+
+# paper drafts, plans and unsent author notes stay local
+drafts/

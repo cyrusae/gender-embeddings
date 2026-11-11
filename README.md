@@ -4,13 +4,11 @@ Standalone copy of the `embeddings/` study from the monorepo `gender` (research 
 LLM and word-embedding representations of grammatical gender overlap with social gender).
 This repo carries the static-embedding part only.
 
-**Two papers** (plan in `docs/papers-shared-plan.md` of the monorepo; the paper skeletons
-`paper1-zhou-reanalysis-skeleton.md` and `paper2-inanimates-skeleton.md` were untracked in the
-monorepo at the time of the split and are not in this repo):
+**Two papers** in preparation (drafts and plans are kept locally in a git-ignored `drafts/`):
 
 1. **Zhou et al. (2019) re-analysis.** Zhou et al. separate grammatical-gender from semantic-gender
    components of Spanish/French MUSE embeddings and test animate nouns only. We re-run their
-   pipeline, check their claims (see `docs/zhou-summary.md`, `docs/issues-for-authors-draft.md`,
+   pipeline, check their claims (see `docs/zhou-summary.md`,
    `docs/upstream-issues.md`), and test mitigation and reference-set choices.
 2. **Inanimate nouns.** Does an inanimate noun still carry a social-gender association once its
    grammatical gender is removed? Gender ValNorm on inanimate nouns (`docs/gvalnorm-prereg.md`),
