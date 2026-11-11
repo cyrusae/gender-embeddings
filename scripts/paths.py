@@ -15,7 +15,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 STORE = Path(os.environ.get("EMB_STORE", "store"))
 LEXICON = REPO / "data" / "lexicon"  # Wiktionary-derived {es,fr}_nouns.csv
-STIMULI = REPO / "data" / "stimuli"  # NOT shipped in this repo (see README: unresolved)
+STIMULI = REPO / "data" / "stimuli"  # phase2_final_v4.csv copied from the monorepo (see data/stimuli/README.md)
 
 
 def muse_dir() -> Path:

@@ -46,8 +46,13 @@ cd ..
 ```
 
 `external/debiaswe` (Bolukbasi et al. 2016 code) is also used by `zhou_hybrid.py` and
-`create_stress_test_notebook.py`: clone it the same way (the exact commit used in the monorepo is
-not recorded in this repo; TODO).
+`create_stress_test_notebook.py` (only its `data/` word lists are read):
+
+```sh
+git -C external clone https://github.com/tolga-b/debiaswe && git -C external/debiaswe checkout 6bb03ee   # Bolukbasi et al. 2016
+```
+
+(6bb03ee2a0d7214339e513ca71cd0a99069dc29c, the commit of the monorepo's clone, checked 2026-11-11.)
 
 **2. Pretrained embeddings** (large; into `$EMB_STORE`, default `./store`, git-ignored):
 
@@ -75,9 +80,12 @@ packages for each script are in its docstring. `pyproject.toml` lists the union.
 | `gg_heldout_es` | `scripts/gg_heldout.py 14 28` | |
 | `gg_minfix_es` | `scripts/gg_heldout.py --minfix 14 28` | "bugs fixed, method unchanged" run |
 | `gvalnorm_en` | `scripts/gvalnorm_en.py` | Glasgow norms + MUSE/fastText English |
-| `gvalnorm_es`, `gvalnorm_fr` | `scripts/gvalnorm_run.py [es\|fr]`, `scripts/gvalnorm_omrani.py es 14 28`, `scripts/gvalnorm_orth.py [es\|fr]` | three scripts write the same `results/gvalnorm_<lang>/` folder; which one produced which file is not recorded here (TODO) |
-| `label_audit_es` | `scripts/label_audit.py` | needs `data/stimuli/phase2_final_v4.csv`, not in this repo (see Unresolved) |
-| `repro_es` | none recorded | no writer found in `scripts/`; see its README if present (TODO) |
+| `gvalnorm_es`, `gvalnorm_fr`: `gvalnorm_fits.csv`, `gvalnorm_nouns.csv`, `gvalnorm_verdicts.csv`, `info.json` | `scripts/gvalnorm_run.py [es\|fr]` | main study; run first (the others read `gvalnorm_nouns.csv`) |
+| …`gvalnorm_omrani_{fits,verdicts}.csv`, `gvalnorm_omrani_info.json` | `scripts/gvalnorm_omrani.py es 14 28`, `scripts/gvalnorm_omrani.py fr 27` | Omrani erasure arm; needs `gg_dump_<lang>` first |
+| …`gvalnorm_orth_{fits,cos,verdicts}.csv` | `scripts/gvalnorm_orth.py [es\|fr]` | Addendum B |
+| …`gvalnorm_fixed_en_{fits,cos,verdicts}.csv` | `scripts/gvalnorm_orth.py [es\|fr] --fixed-en` | Addendum C (Hybrid arms scored with the original English attributes) |
+| `label_audit_es` | `scripts/label_audit.py` | reads `data/stimuli/phase2_final_v4.csv` (copied from the monorepo) |
+| `repro_es` | `scripts/repro_es.py` | upstream notebook executed unchanged; the original run was by hand, this script records the same steps |
 | `wordpair_mechanism` | `scripts/wordpair_mechanism.py` | needs Glasgow |
 | `zhou_construct.json` | `scripts/zhou_construct.py` | |
 | `zhou_figures` | `scripts/zhou_figures.py` | |
@@ -92,15 +100,13 @@ Frozen lists are rebuilt by `scripts/zero_ref_lists.py` (candidates, v0) and
 
 ## Unresolved (missing from this repo)
 
-- `data/stimuli/phase2_final_v4.csv` (monorepo, used by `label_audit.py`): not copied.
-- Glasgow Norms file: not redistributed (see `docs/FETCH-GLASGOW.md`); source URL TODO.
-- `results/repro_es` has no writer script in `scripts/`.
 - Lexicon regeneration needs the monorepo's `gbleed lexicon` (Wiktionary dumps), which is not in this repo.
 
 ## Licences
 
 - **Code:** TBD by the PI.
-- **Wiktionary-derived data** (`data/lexicon/*_nouns.csv`): CC BY-SA 4.0 (Wiktionary, via kaikki.org).
+- **Wiktionary-derived data** (`data/lexicon/*_nouns.csv`, `data/stimuli/phase2_final_v4.csv`): CC BY-SA 4.0 (Wiktionary, via kaikki.org).
+- **Glasgow Norms:** CC BY 4.0 (publisher's supplementary file); fetched, not shipped (`docs/FETCH-GLASGOW.md`).
 - **Upstream code and embeddings** (Zhou et al.; Omrani Sabbaghi & Caliskan; MUSE; fastText): not
   redistributed; cite their papers and use their own terms.
 
