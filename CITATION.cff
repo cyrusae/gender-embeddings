@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "gender-embeddings: grammatical and social gender in static word embeddings"
+type: software
+version: 0.1.0
+date-released: 2026-11-10
+authors:
+  - family-names: "TBD"
+    given-names: "TBD"
+    affiliation: "TBD"
+  - family-names: "TBD"
+    given-names: "TBD"
+    affiliation: "TBD"
+license: "NOASSERTION"  # placeholder: code licence TBD by the PI
+repository-code: "TBD (local repo; not published)"
+abstract: "Partial replication and extension of Zhou et al. (2019) on grammatical and social gender in Spanish and French static embeddings."
+references:
+  - type: article
+    authors:
+      - family-names: "Zhou"
+        given-names: "Pei"
+    title: "Examining Gender Bias in Languages with Grammatical Gender"
+    journal: "Proceedings of EMNLP-IJCNLP 2019"
+    year: 2019
+    url: "https://arxiv.org/abs/1909.02224"
