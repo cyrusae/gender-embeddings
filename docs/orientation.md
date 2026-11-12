@@ -18,15 +18,11 @@ fair zero point their monolingual asymmetry is inconclusive in Spanish and borde
 Grammatical gender of inanimates survives the mitigations; human gender ratings of objects show up in
 the vectors. Full claim table: `docs/zhou-summary.md`; inanimates: `docs/inanimates-summary.md`.
 
-**Authors.** Emailed 2026-11-11; Ryan Cotterell replied wanting details for a marked arXiv/Anthology
-correction and asked Jieyu Zhao about unreleased code. PI replied with a summary and a technical
-attachment (`drafts/issues-for-authors-v2.md`). Appendix draft: `drafts/zhou-appendix-issues.md`
-(paper labels B1–B21 with a Repo ID column; never renumber Z IDs).
+**Authors.** Contacted 2026-11-11 before any write-up (details kept out of this repo).
 
 **Open next.**
 - French: a French person-noun list (by rule; PI can't review French) and whether to rerun the two
   person-noun follow-ups in French (PI: "tomorrow", i.e. 2026-11-12).
-- `gender-embeddings` is synced but **not pushed**: waiting for the authors to say they want it public.
 - If the authors send the unreleased files (mitigated vectors, hard-debiased English, alignment
   details, French Table 1 list), check B3/B13 (Hybrid, De-Align, translation) against them.
 - Paper drafting (PI), with a separate Claude; point it at `zhou-summary.md`, today's rows of
