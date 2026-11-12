@@ -7,6 +7,9 @@ EMB_STORE environment variable; the default is ./store relative to the working d
     $EMB_STORE/fasttext_cc/     fastText Common Crawl cc.{es,fr,de,it,pl,en}.300.vec
     $EMB_STORE/glasgow/         Glasgow Norms (not redistributable; see docs/FETCH-GLASGOW.md)
     $EMB_STORE/nltk_data/       NLTK WordNet corpus (downloaded on first use)
+    $EMB_STORE/kaikki/          kaikki.org Wiktionary dumps (Spanish, French, English JSONL); only for
+                                rebuilding candidate lists (wp_cues_*, wp_persons_*), not for scoring
+    $EMB_STORE/person_adjectives/  person-adjective lists collected by Garg et al. 2018 (cue builder only)
 """
 
 import os
@@ -32,3 +35,11 @@ def glasgow_csv() -> Path:
 
 def nltk_dir() -> Path:
     return STORE / "nltk_data"
+
+
+def kaikki_dir() -> Path:
+    return STORE / "kaikki"
+
+
+def person_adjectives_dir() -> Path:
+    return STORE / "person_adjectives"

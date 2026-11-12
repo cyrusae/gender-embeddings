@@ -114,3 +114,20 @@ Full mapping (monorepo hash, new hash, subject):
 | `ce051987c9ddc1f954f847b77e5c05f519f03803` | `bcba630362fb09a6cbe3516e59e5cb7a57413e49` | Zhou §4.3/§4.4 results; Z18 (candidate-set artefact in Table 2 translation) |
 | `407c643ffe03e4171c94f8bfb02a12c64d58106e` | `b62ff96035166a8e82d09afa552f4ded46e4c796` | Zhou summary for write-up; draft issue list for authors (not sent) |
 | `39ef36a2d94529baac65768673829bf7fb3c3771` | `6f4d146d3cb27a11f87482306f4998f008ca5fd1` | Plain-language summary of inanimate-noun findings |
+
+## After the split (synced 2026-11-11)
+
+Work done in the monorepo after the split (monorepo `39ef36a..`, embeddings only) was copied here in
+one sync commit, so the individual monorepo commits have no counterpart hash. Preregs written after
+the split cite monorepo hashes; their order, as recorded in the monorepo, is listed here so the
+"script committed before any score" claims can still be checked (monorepo history available on
+request). XWEAT work stays monorepo-only and is not included.
+
+| Monorepo commit | Time (2026-11-11, −08:00) | What |
+|---|---|---|
+| `8ccf23c` | 08:59 | Expanded word-pair cues: prereg ADOPTED, cues frozen, scoring script before any score |
+| `1bfeda1` | 09:09 | Expanded word-pair cue results recorded |
+| `0a12085` | 11:52 | Z19 attribute-word correction sensitivity runs |
+| `e698994` | 12:18 | Corrected attribute lists primary (PI): deviation notes |
+| `5f887d7` | 13:05 | Person-noun baseline: list frozen, prereg ADOPTED, scoring script before any score |
+| `052fb76` | 13:09 | Person-noun baseline results recorded |
