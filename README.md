@@ -116,6 +116,7 @@ packages for each script are in its docstring. `pyproject.toml` lists the union.
 | `common_gender_check` | `scripts/common_gender_check.py` | exploratory |
 | `z23_check` | `scripts/z23_check.py` | exploratory |
 | `unit_norm_check.csv` | `scripts/check_unit_norm.py` | |
+| `word_similarity_es` | `scripts/word_similarity_es.py` | needs SemEval-2017 Task 2 data (`SEMEVAL_DIR`) |
 
 Frozen lists are rebuilt by `scripts/zero_ref_lists.py` (candidates, v0) and
 `scripts/zero_ref_freeze.py` (frozen, v1); both read `data/lexicon/`.
