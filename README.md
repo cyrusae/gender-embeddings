@@ -15,9 +15,18 @@ This repo carries the static-embedding part only.
    C1 test-noun list (`docs/c1-prereg.md`), zero-point and reference sets
    (`docs/zhou-zero-point-prereg.md`), word-pair mechanism (`docs/wordpair-mechanism-prereg.md`),
    crime nouns (`docs/crime-noun-probe-prereg.md`), generic masculine (`docs/generic-masculine-prereg.md`).
+3. **Follow-ups on the cross-lingual test** (part of paper 1): expanded feminine adjective cues
+   (`docs/wordpair-cues-prereg.md`), ordinary person nouns vs occupations (`docs/wordpair-persons-prereg.md`,
+   `docs/persons-zero-point-prereg.md`, `docs/persons-genmasc-prereg.md`), plus exploratory checks
+   (hubness/CSLS, grammatical vs semantic gender in leans; `docs/internal-checks.md`).
 
-Start with `docs/orientation.md`, then `docs/embeddings-handoff.md` and
-`docs/embeddings-lit-verification.md`. Decisions are in `docs/decisions.md`.
+Start with `docs/orientation.md` (current state, conventions, a table of every study), then
+`docs/zhou-summary.md` for the claim-by-claim verdicts. Decisions are in `docs/decisions.md`; checks of
+our own pipeline in `docs/internal-checks.md`.
+
+**Attribute words.** Zhou et al.'s attribute lists contain errors (upstream issue Z19). The corrected
+lists are the scripts' default; `ZHOU_ATTR=published` reproduces Zhou's lists and the result folders
+frozen before 2026-11-11 (see `results/attrfix_sensitivity/README.md`).
 
 ## Layout
 
@@ -64,6 +73,11 @@ It also creates the symlinks the upstream notebooks expect inside `external/`.
 
 **4. NLTK WordNet** is downloaded on first use into `$EMB_STORE/nltk_data`.
 
+**5. Only for rebuilding candidate lists** (not for scoring; the frozen lists are in `data/`):
+kaikki.org Wiktionary JSONL dumps for Spanish, French and English in `$EMB_STORE/kaikki/`
+(https://kaikki.org/dictionary/), and the Garg et al. (2018) person-adjective lists in
+`$EMB_STORE/person_adjectives/` (see `scripts/wp_cues_build.py`).
+
 Python: `uv run --no-project --python 3.12 --with <packages> python scripts/<name>.py`; the
 packages for each script are in its docstring. `pyproject.toml` lists the union.
 
@@ -92,6 +106,16 @@ packages for each script are in its docstring. `pyproject.toml` lists the union.
 | `zhou_shift_es`, `zhou_shift_fr` | `scripts/zhou_shift.py` | |
 | `zhou_wordpair` | `scripts/zhou_wordpair.py` | |
 | `zhou_zero_point_es`, `zhou_zero_point_fr` | `scripts/zhou_zero_point.py [es\|fr]` | |
+| `wordpair_cues` | `scripts/wordpair_cues.py` | cues built by `wp_cues_build.py`, `wp_cues_extras.py`; frozen `data/wp_cues_frozen_v1.csv` |
+| `wordpair_persons` | `scripts/wordpair_persons.py`, `scripts/wordpair_persons_extra.py` | nouns built by `wp_persons_build.py`, `wp_persons_flags.py`, `wp_persons_freeze.py` |
+| `persons_zero_point` | `scripts/persons_zero_point.py` | |
+| `persons_genmasc` | `scripts/persons_genmasc.py` | plurals from `wp_persons_plurals.py`; `vocab50k/` = same script with `nmax=50_000` (sensitivity) |
+| `attrfix_sensitivity` | affected scripts with the corrected lists (now the default) | see its README |
+| `list_audit` | sandbox reruns, see its README | exploratory |
+| `hub_csls_check` | `scripts/hub_csls_check.py` | exploratory |
+| `common_gender_check` | `scripts/common_gender_check.py` | exploratory |
+| `z23_check` | `scripts/z23_check.py` | exploratory |
+| `unit_norm_check.csv` | `scripts/check_unit_norm.py` | |
 
 Frozen lists are rebuilt by `scripts/zero_ref_lists.py` (candidates, v0) and
 `scripts/zero_ref_freeze.py` (frozen, v1); both read `data/lexicon/`.
@@ -110,10 +134,10 @@ Frozen lists are rebuilt by `scripts/zero_ref_lists.py` (candidates, v0) and
 
 ## Monorepo
 
-The research is coordinated in the monorepo `/Users/watcher/GitHere/gender` (other studies: a
-base-model gender-direction study, a character study). Rules that apply here are repeated in
-`CLAUDE.md`. Quoted monorepo commit hashes map to this repo via `docs/HISTORY-MAP.md`.
+The research is coordinated in the monorepo `gender` (other studies: a base-model gender-direction
+study, a character study). Quoted monorepo commit hashes map to this repo via `docs/HISTORY-MAP.md`;
+work after the split was synced in batches (see its last section).
 
 ## Cite
 
-See `CITATION.cff` (authors and title are placeholders until the PI fills them in).
+See `CITATION.cff`.
