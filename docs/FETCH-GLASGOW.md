@@ -10,7 +10,7 @@ Put the file at `$EMB_STORE/glasgow/glasgow_norms_scott2019.csv` (default `store
 Expected file: 814,379 bytes, sha256
 `30d7776eed9219767f8a6aabdf95d7120cd050ddeab431acef13d435807bbc39`
 (checksum of the copy the monorepo used, taken 2026-11-10 from
-`/Users/watcher/GitHere/gender/data/raw/glasgow/glasgow_norms_scott2019.csv`).
+`data/raw/glasgow/glasgow_norms_scott2019.csv` in the author's monorepo).
 
 Source: Electronic Supplementary Material 2 of the article (doi 10.3758/s13428-018-1099-3), CC BY 4.0
 (as recorded in the monorepo's `docs/decisions.md`, 2026-10-08):

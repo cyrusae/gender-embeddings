@@ -1,3 +1,5 @@
+*Historical planning document (2026-11-08), kept for the record; superseded by `docs/orientation.md`.*
+
 # Handoff: static-embedding debiasing study (standalone, spun off from `cyrusae/gender`)
 
 Context from a planning chat with Cyrus, 2026-11-08. Purpose: get the three key papers' repos running, reproduce a headline number from each, then build the extensions below. **Figures quoted from the papers were read off the full texts during the chat; verify them against the PDFs/repos before relying on them. Items marked (verify) came from memory.**

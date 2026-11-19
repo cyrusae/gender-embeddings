@@ -4,7 +4,7 @@ Standalone copy of the `embeddings/` study from the monorepo `gender` (research 
 LLM and word-embedding representations of grammatical gender overlap with social gender).
 This repo carries the static-embedding part only.
 
-**Two papers** in preparation (drafts and plans are kept locally in a git-ignored `drafts/`):
+**Two papers** in preparation:
 
 1. **Zhou et al. (2019) re-analysis.** Zhou et al. separate grammatical-gender from semantic-gender
    components of Spanish/French MUSE embeddings and test animate nouns only. We re-run their
@@ -27,6 +27,21 @@ our own pipeline in `docs/internal-checks.md`.
 **Attribute words.** Zhou et al.'s attribute lists contain errors (upstream issue Z19). The corrected
 lists are the scripts' default; `ZHOU_ATTR=published` reproduces Zhou's lists and the result folders
 frozen before 2026-11-11 (see `results/attrfix_sensitivity/README.md`).
+
+## Reading these documents
+
+The work was done by one researcher (Cyrus Eosphoros, "the PI" in the documents) with an AI coding
+assistant (Anthropic's Claude), which wrote most scripts and drafts under the PI's direction; the PI
+made the design decisions, reviewed every word list, and adopted every pre-registration. Notes
+written by the assistant say so (e.g. "Claude's drafting error"). Other vocabulary:
+
+- **Z1–Z35, O…**: numbered issues found in Zhou et al.'s and Omrani Sabbaghi & Caliskan's papers and
+  code (`docs/upstream-issues.md`).
+- **Shift Ori / Hybrid Ori / De-Align**: Zhou et al.'s mitigation methods, as named in their paper.
+- **Intrusion**: in the word-pair test, how much better the masculine occupation form is retrieved
+  than the feminine one when the query carries a feminine adjective.
+- **Frozen / v1 lists**: word lists fixed before scoring; never edited after results exist.
+- **Exploratory**: not pre-registered; labelled as such in its script and README.
 
 ## Layout
 
@@ -123,7 +138,7 @@ Frozen lists are rebuilt by `scripts/zero_ref_lists.py` (candidates, v0) and
 
 ## Unresolved (missing from this repo)
 
-- Lexicon regeneration needs the monorepo's `gbleed lexicon` (Wiktionary dumps), which is not in this repo.
+- Lexicon regeneration needs the `gbleed lexicon` command from the author's research monorepo (`cyrusae/gender`, `src/gbleed/lexicon.py`), which reads the kaikki.org Wiktionary dumps; it isn't included here. The built lexicons are in `data/lexicon/`.
 
 ## Licences
 

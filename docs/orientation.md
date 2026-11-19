@@ -1,48 +1,56 @@
-# Orientation: start here (updated 2026-11-11)
+# Orientation: start here (updated 2026-11-19)
 
-Paths are relative to `embeddings/` in the monorepo (`/Users/watcher/GitHere/gender`) and to the
-repo root in the standalone `gender-embeddings` repo (same files; see "Two repos" below).
+This repository reproduces and re-analyses Zhou et al. (2019), "Examining Gender Bias in Languages
+with Grammatical Gender", and extends it to inanimate nouns. Paths are relative to the repository
+root. For who's who and the vocabulary used in these documents, see "Reading these documents" in the
+README.
 
-## Where things stand (2026-11-11)
+## Where things stand
 
-**The project.** Two papers grow out of one question (does Zhou et al. 2019's bias mitigation keep the
+**The project.** Two papers grow out of one question (does Zhou et al.'s bias mitigation keep the
 grammatical gender of inanimate nouns?): (1) a reanalysis of Zhou et al. 2019, (2) the inanimate-noun
-findings. Skeletons and drafts in `drafts/` (git-ignored, local only).
+findings.
 
-**One-paragraph state.** Zhou's cross-lingual bias holds and is stronger than their test showed; it is
-specific to occupations (ordinary person nouns show a weaker masculine default that a feminine cue
+**State in one paragraph.** Zhou's cross-lingual bias holds and is stronger than their test showed; it
+is specific to occupations (ordinary person nouns show a weaker masculine default that a feminine cue
 cancels). Most of their quantitative support doesn't hold: Table 1 p-values are guaranteed or tie
-artefacts, Shift's drop is algebraic, Hybrid = Shift on Table 1, Table 2 has no feminine cues, the
-French numbers come from an unreleased list, and the attribute lists have errors (Z19, Z23). With a
-fair zero point their monolingual asymmetry is inconclusive in Spanish and borderline in French.
-Grammatical gender of inanimates survives the mitigations; human gender ratings of objects show up in
-the vectors. Full claim table: `docs/zhou-summary.md`; inanimates: `docs/inanimates-summary.md`.
+artefacts, Shift's drop is algebraic and its reported size depends on a centring bug, Hybrid = Shift
+on Table 1, Table 2 has no feminine cues, the French numbers come from an unreleased list, and the
+attribute lists have errors. With a fair zero point their monolingual asymmetry is inconclusive in
+Spanish and borderline in French. Grammatical gender of inanimates survives the mitigations; human
+gender ratings of objects show up in the vectors. Claim-by-claim table: `docs/zhou-summary.md`;
+inanimates: `docs/inanimates-summary.md`; every upstream issue (Z1–Z35): `docs/upstream-issues.md`.
 
-**Authors.** Contacted 2026-11-11 before any write-up (details kept out of this repo).
+**Authors.** Zhou et al. were contacted on 2026-11-11, before any write-up, and are preparing a
+correction.
 
-**Open next.**
-- French: a French person-noun list (by rule; PI can't review French) and whether to rerun the two
-  person-noun follow-ups in French (PI: "tomorrow", i.e. 2026-11-12).
-- If the authors send the unreleased files (mitigated vectors, hard-debiased English, alignment
-  details, French Table 1 list), check B3/B13 (Hybrid, De-Align, translation) against them.
-- Paper drafting (PI), with a separate Claude; point it at `zhou-summary.md`, today's rows of
-  `decisions.md`, the preregs and `upstream-issues.md`.
+**Open.** French person-noun follow-ups; checking the mitigated results against the authors' files if
+they are released.
 
-## Conventions that bite
+## Conventions
 
 - **Pre-register, commit the scoring script, then score.** Every study in `docs/*-prereg.md` has an
   adoption record; deviations are dated sections at the end of the prereg with both versions shown.
-- **Attribute words:** the corrected lists (Spanish *tío*; French de-duplicated, names dropped) are
-  primary and the scripts' **default** (`scripts/zhou_shift.py`, `attributes()`).
-  `ZHOU_ATTR=published` reproduces Zhou's lists and the per-study result folders frozen before
-  2026-11-11; the corrected outputs are in `results/attrfix_sensitivity/`. Rerunning a study with the
-  default overwrites its frozen folder (git shows it).
-- **Issue IDs:** Z1–Z23 (Zhou), O1–… (Omrani), X1–X13 (XWEAT, monorepo only), in
-  `docs/upstream-issues.md`. Every decision is a row in `docs/decisions.md`.
-- **Labels:** gold labels never come from a model; Claude suggestions are marked
-  `claude_suggest_unverified` and the PI reviews lists (`.numbers` → `*_edited.csv`).
-- **Exploratory vs pre-registered:** sandbox sensitivity runs go to their own result folder with a
-  README (`results/attrfix_sensitivity/`, `results/list_audit/`, `results/z23_check/`).
+  Preregs keep their drafting history (open questions at drafting, later results and deviations), so
+  read them top to bottom as a dated record.
+- **Exploratory vs pre-registered:** anything not pre-registered says so in its script docstring and
+  result README (`results/attrfix_sensitivity/`, `list_audit/`, `hub_csls_check/`,
+  `common_gender_check/`, `z23_check/`, `word_similarity_es/`, `wordpair_cues_midpoint/`,
+  `wordpair_share_check/`).
+- **Attribute words:** Zhou et al.'s lists contain errors (Z19). The corrected lists (Spanish *tío*;
+  French de-duplicated, names dropped) are primary and the scripts' **default**
+  (`scripts/zhou_shift.py`, `attributes()`). `ZHOU_ATTR=published` reproduces Zhou's lists and the
+  result folders frozen before 2026-11-11; the corrected outputs are in
+  `results/attrfix_sensitivity/`. Rerunning a study with the default overwrites its frozen folder
+  (git shows the change).
+- **PCA centring:** the notebook centres definitional pairs at `a + b/2` (Z3). Our rebuilds keep it to
+  match the paper; `ZHOU_CENTRE=midpoint` uses the correct midpoint (Z33).
+- **Issue IDs:** Z (Zhou et al.) and O (Omrani Sabbaghi & Caliskan) in `docs/upstream-issues.md`;
+  checks of our own pipeline in `docs/internal-checks.md`. Every decision is a row in
+  `docs/decisions.md`.
+- **Labels:** gold labels never come from a model. Word lists were built by rule; where an AI
+  assistant suggested a label it is marked `claude_suggest_unverified`, and the author reviewed the
+  lists (review copies are the `*_edited.csv` files).
 
 ## Studies
 
@@ -54,33 +62,28 @@ the vectors. Full claim table: `docs/zhou-summary.md`; inanimates: `docs/inanima
 | Crime-noun probe | `crime-noun-probe-prereg.md` | ES male-leaning; FR borderline |
 | Generic masculine (occupations) | `generic-masculine-prereg.md` | ES supported; FR inconclusive |
 | Word-pair mechanism | `wordpair-mechanism-prereg.md` | not the dictionary; stereotype β 0.30 |
-| Expanded feminine cues (87 ES / 86 FR) | `wordpair-cues-prereg.md` | intrusion ES 0.29, FR 0.19; mitigations cut ~⅓ |
-| Person-noun baseline | `wordpair-persons-prereg.md` | persons none, occupations 0.29; masculine default 0.28 vs 0.51 |
+| Expanded feminine cues (87 ES / 86 FR) | `wordpair-cues-prereg.md` | intrusion ES 0.29, FR 0.19; mitigations cut ~⅓ (robust to the centring fix) |
+| Person-noun baseline | `wordpair-persons-prereg.md` | persons none, occupations 0.29; masculine default 0.28 vs 0.51; CSLS 0.19 |
 | Person-noun zero point (ES) | `persons-zero-point-prereg.md` | inconclusive, groups not distinguishable |
 | Person-noun generic masculine (ES) | `persons-genmasc-prereg.md` | occupations supported, persons inconclusive (unstable with vocabulary) |
-| XWEAT sensitivity (monorepo only) | `xweat-sensitivity-prereg.md` | see `results/xweat_sensitivity/README.md` |
 
 Reproductions without a prereg: `scripts/zhou_shift.py`, `zhou_hybrid.py`, `zhou_figures.py`,
-`zhou_sec43_44.py`, `zhou_wordpair.py`, `repro_es.py`; Shift identity write-up in
-`docs/zhou-shift-identity.md`.
+`zhou_sec43_44.py`, `zhou_wordpair.py`, `repro_es.py`, `word_similarity_es.py`; the Shift identity is
+written up in `docs/zhou-shift-identity.md`.
 
 ## Blind checks
 
-Two rounds, each with a Claude and a Gemini agent given only the paper, code and vectors: the first
-with a claim list (`~/zhou-blind-check*`), the second open-ended (`~/zhou-blind-open-{claude,gemini}`,
-TASK.md 806b032). What each found independently is in `docs/upstream-issues.md` (notes after Z22) and
-the appendix preamble. The non-blind Gemini walkthrough is `blind-checks/stress_test_zhou2019.ipynb`
-in `gender-embeddings` (its §4 conclusion was wrong; see the person-noun prereg).
+Independent AI agents (Claude and Gemini) were given only the paper, the released code and the
+vectors, first with a claim list, then open-ended; later rounds used autonomous replication runs.
+What each found independently is noted in `docs/upstream-issues.md`. Their task files and reports
+are in `blind-checks/` (the non-blind Gemini walkthrough `blind-checks/stress_test_zhou2019.ipynb`
+reached a wrong conclusion in its §4; see `docs/wordpair-persons-prereg.md`).
 
-## Two repos
+## History
 
-- **Monorepo** `gender/embeddings/`: where work happens. Data on the external drive
-  (`/Volumes/Lexar/gbleed/shared/`: `embeddings/muse`, `kaikki`, `person_adjectives`).
-- **`gender-embeddings`** (standalone, for sharing): made by `git subtree split`; `docs/HISTORY-MAP.md`
-  maps old commit hashes, including a post-split table. Scripts use `scripts/paths.py`
-  (`EMB_STORE`, default `./store`); `external/`, `store/`, `drafts/` are git-ignored. Sync by applying
-  the monorepo diff with `--relative=embeddings`, excluding XWEAT and `.numbers` files, appending
-  `decisions.md` rows, and rewriting `python embeddings/scripts/` → `python scripts/` in docstrings.
+This repository was split out of the author's research monorepo (`cyrusae/gender`, directory
+`embeddings/`) with `git subtree split`; `docs/HISTORY-MAP.md` maps monorepo commit hashes quoted in
+the preregs to hashes here. Later work was copied over in batches.
 
 ---
 
@@ -89,13 +92,13 @@ in `gender-embeddings` (its §4 conclusion was wrong; see the person-noun prereg
 *Kept as written on 2026-11-08 except where marked; later findings supersede parts of it (see above
 and `docs/upstream-issues.md`).*
 
-Read from the cloned code and the notebooks' saved outputs (`embeddings/external/`), not from
+Read from the cloned code and the notebooks' saved outputs (`external/`), not from
 the papers. Paper claims still need checking against the PDFs.
 
 ## Embeddings (downloaded to the store, linked into each repo)
 
-`embeddings/scripts/fetch_embeddings.sh` puts everything in
-`/Volumes/Lexar/gbleed/shared/embeddings/` (checksums in `SHA256SUMS`) and symlinks it where
+`scripts/fetch_embeddings.sh` puts everything in
+`$EMB_STORE` (default `./store`; checksums in `SHA256SUMS`) and symlinks it where
 each notebook looks.
 
 | repo | vectors | other files |

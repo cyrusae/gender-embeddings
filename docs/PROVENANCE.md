@@ -1,6 +1,6 @@
 # Provenance of copied files
 
-Files copied from the monorepo `/Users/watcher/GitHere/gender` (HEAD 39ef36a at copy time, 2026-11-10)
+Files copied from the author's research monorepo `cyrusae/gender` (HEAD 39ef36a at copy time, 2026-11-10)
 into this repo. Each line: new path, source, monorepo commit that last changed the source, notes.
 
 - `docs/embeddings-handoff.md`: from monorepo `docs/design/embeddings-handoff.md`, last changed in

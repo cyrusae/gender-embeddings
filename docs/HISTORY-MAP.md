@@ -1,6 +1,6 @@
 # History map: monorepo to standalone repo
 
-This repo was made from the monorepo `gender` (`/Users/watcher/GitHere/gender`) with
+This repo was made from the author's research monorepo `cyrusae/gender` with
 `git subtree split -P embeddings` (monorepo branch `embeddings-split`), then `git pull` into a fresh
 repo. The history of `embeddings/` is kept commit for commit, so each old commit has a new
 hash. The two sides were paired by order (topological, oldest first). For every pair, the
