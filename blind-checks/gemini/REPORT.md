@@ -1,7 +1,9 @@
+*Edited 2026-11-19 for publication: the agent's local `file:///…/zhou_repo/bias_emnlp19.ipynb` links were replaced with links to the same notebook on GitHub at commit 6392702. Nothing else was changed.*
+
 # Independent Evaluation Report: Zhou et al. (2019) "Shift Ori"
 
 **Subject Paper:** Zhou, Shi, Zhao, Huang, Chen, Cotterell, Chang (2019), *"Examining Gender Bias in Languages with Grammatical Gender"*, EMNLP-IJCNLP 2019 ([arXiv:1909.02224](https://arxiv.org/abs/1909.02224)).  
-**Code Repository:** `https://github.com/shaoxia57/Bias_in_Gendered_Languages` (commit `6392702`), notebook [`zhou_repo/bias_emnlp19.ipynb`](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb).  
+**Code Repository:** `https://github.com/shaoxia57/Bias_in_Gendered_Languages` (commit `6392702`), notebook [`zhou_repo/bias_emnlp19.ipynb`](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb).  
 **Evaluation Date:** November 2026.
 
 ---
@@ -26,7 +28,7 @@ Following Zhou et al. (§2.1, §3.1, §4.2) and the released notebook:
 - Let $(m_i, f_i)$ for $i = 1, \dots, N$ denote $N$ pairs of masculine and feminine occupation words.
 - Let $X = \{m_1, \dots, m_N\}$ and $Y = \{f_1, \dots, f_N\}$ denote the masculine and feminine target sets, with $W = X \cup Y$ denoting the full set of all $2N$ occupation words.
 - Let $A$ and $B$ denote the sets of male and female attribute/definitional words, respectively.
-- In the paper's code ([Cell 217](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb)), association scores are computed via inner products with the attribute words:
+- In the paper's code ([Cell 217](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb)), association scores are computed via inner products with the attribute words:
   $$s(w, A, B) = \frac{1}{|A|} \sum_{a \in A} w \cdot a - \frac{1}{|B|} \sum_{b \in B} w \cdot b = w \cdot a,$$
   where $a$ is the attribute difference vector:
   $$a = \mu_A - \mu_B = \left( \frac{1}{|A|} \sum_{a \in A} a \right) - \left( \frac{1}{|B|} \sum_{b \in B} b \right).$$
@@ -37,7 +39,7 @@ Following Zhou et al. (§2.1, §3.1, §4.2) and the released notebook:
 ### 1.3 The Shift Ori Mitigation
 In §3.1 (Eq. 4) and §3.2, Shift Ori uses the origin as the anchor ($w_a = 0$). To symmetrize the pair $(m_i, f_i)$ with respect to the origin along $d_s$, the required scalar offset is:
 $$\delta_i = -\frac{1}{2} (m_i \cdot d_s + f_i \cdot d_s) = -\frac{1}{2} (m_i + f_i) \cdot d_s.$$
-Both words in the pair are shifted along $d_s$ by $\delta_i d_s$ (as implemented in [Cell 273](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) and [Cell 312](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb)):
+Both words in the pair are shifted along $d_s$ by $\delta_i d_s$ (as implemented in [Cell 273](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) and [Cell 312](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb)):
 $$m_i' = m_i + \delta_i d_s,$$
 $$f_i' = f_i + \delta_i d_s.$$
 
@@ -59,7 +61,7 @@ $$= (m_i + f_i) \cdot \Big[ a - (a \cdot d_s) d_s \Big] = (m_i + f_i) \cdot a^\p
 Summing over all $N$ occupation pairs gives the total association sum:
 $$S_X' + S_Y' \equiv \sum_{i=1}^N s(m_i', A, B) + \sum_{i=1}^N s(f_i', A, B) = \sum_{i=1}^N (m_i + f_i) \cdot a^\perp = \sum_{w \in W} w \cdot a^\perp.$$
 
-Next, evaluate the MWEAT–Diff statistic. In the authors' code ([Cell 217](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb), [Cell 230](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb)), MWEAT–Diff (index 1 of `modified_WEAT`, which matches the values reported in Table 1) is defined as:
+Next, evaluate the MWEAT–Diff statistic. In the authors' code ([Cell 217](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb), [Cell 230](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb)), MWEAT–Diff (index 1 of `modified_WEAT`, which matches the values reported in Table 1) is defined as:
 $$\text{MWEAT–Diff} = \Big\lvert \lvert S_X' \rvert - \lvert S_Y' \rvert \Big\rvert.$$
 
 For occupation words in gendered languages, male occupations lean toward male attributes ($S_X' > 0$) and female occupations lean toward female attributes ($S_Y' < 0$). Because $S_X' \ge 0$ and $S_Y' \le 0$:
@@ -73,10 +75,10 @@ $$\text{MWEAT–Diff} = \lvert S_X' + S_Y' \rvert = \left\lvert \sum_{w \in W} w
 ### 1.5 Conditions Required for the Identity
 The identity holds **exactly** (to machine precision $\sim 10^{-15}$) under the following conditions:
 1. **Linear association metric:** The association score is linear in $w$, $s(w, A, B) = w \cdot a$.
-2. **No vector re-normalization:** The word embeddings are not re-normalized to unit length after shifting. In the authors' code ([Cell 312](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb)), the offset is added directly without subsequent normalization.
+2. **No vector re-normalization:** The word embeddings are not re-normalized to unit length after shifting. In the authors' code ([Cell 312](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb)), the offset is added directly without subsequent normalization.
 3. **Equal shift along $d_s$:** Both $m_i$ and $f_i$ are shifted by the same scalar offset $\delta_i$ along unit vector $d_s$.
 4. **Sign separation:** Total male association is non-negative ($S_X' \ge 0$) and total female association is non-positive ($S_Y' \le 0$).
-5. **Invariance to attribute shift along $d_s$:** Even if attribute words are shifted along $d_s$ (as attempted in [Cell 297](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb)), any shift of $a$ along $d_s$ is annihilated by the projection $a^\perp = a - (a \cdot d_s) d_s$.
+5. **Invariance to attribute shift along $d_s$:** Even if attribute words are shifted along $d_s$ (as attempted in [Cell 297](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb)), any shift of $a$ along $d_s$ is annihilated by the projection $a^\perp = a - (a \cdot d_s) d_s$.
 
 ### 1.6 Consequence & What the Claim Might Overstate
 - **Consequence:** The post-mitigation value $\lvert \sum_{w \in W} w \cdot a^\perp \rvert$ depends **only** on the pre-mitigation embeddings $w$, the original attribute difference $a$, and the semantic direction $d_s$. The shift $\delta_i$ (which was designed to eliminate the asymmetry along $d_s$) completely disappears from the test statistic.
@@ -91,7 +93,7 @@ The identity holds **exactly** (to machine precision $\sim 10^{-15}$) under the 
 **CONFIRMED**.
 
 ### 2.2 Mathematical Proof of Permutation Collapse
-Let $W$ be the set of $2N$ occupation words. In the permutation test ([Cell 230](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb)), a random subset $c \subset W$ of size $N$ is chosen as the pseudo-male target set, and the complement $\text{not\_c} = W \setminus c$ forms the pseudo-female target set.
+Let $W$ be the set of $2N$ occupation words. In the permutation test ([Cell 230](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb)), a random subset $c \subset W$ of size $N$ is chosen as the pseudo-male target set, and the complement $\text{not\_c} = W \setminus c$ forms the pseudo-female target set.
 
 Let $S_c = \sum_{w \in c} s(w', A, B)$ and $S_{\text{not\_c}} = \sum_{w \in \text{not\_c}} s(w', A, B)$.  
 Because $c$ and $\text{not\_c}$ partition $W$:
@@ -121,7 +123,7 @@ Assuming without loss of generality that $S_{total} \ge 0$ (if negative, absolut
 - **Theorem 2 (Massive Tie):** Whenever $S_c$ and $S_{\text{not\_c}}$ have opposite signs, $\text{stat}(c) \equiv \text{test\_stat}$ exactly. Since $S_{total} \approx 0.3090$ is very small compared to the spread of individual word scores ($\sim \pm 2.8$), a random partition of 58 words almost always has $S_c \notin (0, S_{total})$. Empirically, **95.97%** of random permutations produce $\text{stat}(c) == \text{test\_stat}$ to within $10^{-14}$.
 
 ### 2.4 Why the Paper Reported Non-Zero P-Values
-In [Cell 230](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb), lines 20–23:
+In [Cell 230](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb), lines 20–23:
 ```python
 c = random.sample(all_targets, len(tw1))
 not_c = filterfalse(lambda x: x in c, all_targets)
@@ -152,30 +154,30 @@ The code tests the strict inequality `stat > test_stat`.
 #### Clause 1: "The released notebook never applies Eq. (2) (removing $d_s$ from inanimate nouns)"
 - **Paper Claim (§3.1, §3.2):** For inanimate nouns, the semantic gender component $d_s$ is projected out via Eq. (2): minimizing $\lvert \langle w, d_s \rangle \rvert$.
 - **Notebook Reality:**
-  - Inanimate nouns are read in [Cell 58](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) (`ES_masculine_nouns`, `ES_feminine_nouns`) and [Cell 65](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) (`./5000_masculine_es`), but they are used exclusively to train a classifier / PCA for the grammatical gender direction.
-  - The projection function `drop(u, v) = u - v * (u.dot(v) / v.dot(v))` is defined in [Cell 78](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) (lines 3–5).
+  - Inanimate nouns are read in [Cell 58](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) (`ES_masculine_nouns`, `ES_feminine_nouns`) and [Cell 65](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) (`./5000_masculine_es`), but they are used exclusively to train a classifier / PCA for the grammatical gender direction.
+  - The projection function `drop(u, v) = u - v * (u.dot(v) / v.dot(v))` is defined in [Cell 78](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) (lines 3–5).
   - Across the entire notebook, `drop` is only called:
-    1. In [Cell 247](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) (lines 1–8) on 8 career words and 8 family words for Caliskan WEAT 6.
-    2. In [Cell 339](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) on the single word `'enfermera'` as an ad-hoc test.
+    1. In [Cell 247](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) (lines 1–8) on 8 career words and 8 family words for Caliskan WEAT 6.
+    2. In [Cell 339](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) on the single word `'enfermera'` as an ad-hoc test.
   - Eq. (2) is **never applied** to any set of inanimate nouns or to the vocabulary at large.
 - **Verdict:** CONFIRMED.
 
 #### Clause 2: "the Spanish Shift Ori embedding it evaluates is loaded from a file not in the repo"
 - **Notebook Reality:**
-  - In [Cell 14](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb), lines 1–5:
+  - In [Cell 14](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb), lines 1–5:
     ```python
     ori_offset_debiased_ES_embeddings_path = './data/ori_offset_debiased_ES_embeddings.txt'
     ori_offset_debiased_ES_embeddings, ori_ES_id2word, ori_ES_word2id = load_vec(ori_offset_debiased_ES_embeddings_path, nmax)
     ```
-  - Similarly, French Shift Ori is loaded in [Cell 18](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb), lines 1–5 from `'./data/ori_offset_debiased_FR_embeddings.txt'`.
+  - Similarly, French Shift Ori is loaded in [Cell 18](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb), lines 1–5 from `'./data/ori_offset_debiased_FR_embeddings.txt'`.
   - None of these `.txt` files exist in the repository (the `data/` directory is not included in git commit `6392702`).
-  - Furthermore, in the notebook, `ori_offset_debiased_ES_embeddings` is evaluated on career/family words in [Cell 250](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb). The occupation MWEAT in [Cell 305](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) evaluates `hybrid_ori_new_ES_embeddings` (built from `hybrid_ori_ES_embeddings`, which is also loaded from `./data/hybrid_ori_ES_embeddings.txt` in [Cell 10](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb)).
+  - Furthermore, in the notebook, `ori_offset_debiased_ES_embeddings` is evaluated on career/family words in [Cell 250](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb). The occupation MWEAT in [Cell 305](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) evaluates `hybrid_ori_new_ES_embeddings` (built from `hybrid_ori_ES_embeddings`, which is also loaded from `./data/hybrid_ori_ES_embeddings.txt` in [Cell 10](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb)).
 - **Verdict:** CONFIRMED.
 
 #### Clause 3: "The words shifted under Eq. (4) are the same occupation words MWEAT scores"
 - **Notebook Reality:**
-  - In [Cell 273](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) (lines 1–5), offsets are computed exclusively for `ES_EN_combined_occupation_words` (58 occupation pairs).
-  - In [Cell 312](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) (lines 1–7), offsets are applied only to those 58 occupation pairs:
+  - In [Cell 273](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) (lines 1–5), offsets are computed exclusively for `ES_EN_combined_occupation_words` (58 occupation pairs).
+  - In [Cell 312](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) (lines 1–7), offsets are applied only to those 58 occupation pairs:
     ```python
     counter = 0
     for pair in ES_EN_combined_occupation_words:
@@ -183,14 +185,14 @@ The code tests the strict inequality `stat > test_stat`.
         hybrid_ori_ES_embeddings[spanish_word2id[pair[1]]] += offset_list_ori_ES[counter] * ...
         counter += 1
     ```
-  - In [Cell 234](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) (lines 1–3), the MWEAT target lists are extracted from the identical list:
+  - In [Cell 234](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) (lines 1–3), the MWEAT target lists are extracted from the identical list:
     ```python
     ES_female_occupation_words = [triple[0] for triple in ES_EN_combined_occupation_words]
     ES_male_occupation_words = [triple[1] for triple in ES_EN_combined_occupation_words]
     ```
-  - These exact lists are evaluated in [Cell 305](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb).
+  - These exact lists are evaluated in [Cell 305](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb).
 - **Verdict:** CONFIRMED.
-- **Nuance / Minor detail:** In [Cell 297](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb), the authors also shifted `ES_defs` (the definitional/attribute pairs) using the same offset formula to create `hybrid_ori_new_ES_embeddings`. However, no general vocabulary words outside these specific test lists were ever shifted.
+- **Nuance / Minor detail:** In [Cell 297](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb), the authors also shifted `ES_defs` (the definitional/attribute pairs) using the same offset formula to create `hybrid_ori_new_ES_embeddings`. However, no general vocabulary words outside these specific test lists were ever shifted.
 
 ---
 
@@ -201,16 +203,16 @@ In §2.1 (p. 2), the paper states:
 > *"Therefore, instead of applying PCA, we learn the grammatical gender direction $d_g$ by Linear Discriminant Analysis (LDA) (Fisher, 1936)... Comparing $d_{PCA}$ with $d_g$, the cosine similarity between them is 0.389, indicating these two directions are overlapped to some extent but not identical."*
 
 In the notebook:
-- In [Cell 73](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb), lines 12–17, the authors fit a support vector machine (`LinearSVC()`), not LDA, on 3,000 noun pairs:
+- In [Cell 73](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb), lines 12–17, the authors fit a support vector machine (`LinearSVC()`), not LDA, on 3,000 noun pairs:
   ```python
   clf_3000 = LinearSVC()
   clf_3000.fit(X_3000, y_3000)
   coef = clf_3000.coef_
   ES_grammar_gender_direction_3000 = np.reshape(coef/np.linalg.norm(coef), (300,))
   ```
-- In [Cell 75](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb), an attempt to run `LinearDiscriminantAnalysis` failed with an uncaught exception:
+- In [Cell 75](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb), an attempt to run `LinearDiscriminantAnalysis` failed with an uncaught exception:
   `ValueError: Internal work array size computation failed: -10`.
-- In [Cell 77](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb), lines 1–2:
+- In [Cell 77](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb), lines 1–2:
   ```python
   cos_sim(ES_grammar_gender_direction_3000, ES_gender_direction)
   ```
@@ -218,7 +220,7 @@ In the notebook:
 - **Finding:** The reported cosine similarity of **0.389** was produced by a **Linear Support Vector Classifier (`LinearSVC`)**, NOT by Linear Discriminant Analysis (LDA) as stated in the published text.
 
 ### 4.2 Parenthesis Bug in `doPCA`
-In [Cell 36](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) (lines 6–9), the function `doPCA` contains an operator precedence bug:
+In [Cell 36](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) (lines 6–9), the function `doPCA` contains an operator precedence bug:
 ```python
 for a, b in pairs:
     center = (embedding[word2id[a]] + embedding[word2id[b]]/2)
@@ -375,16 +377,16 @@ Claim 2 Permutations (10,000 samples):
 
 | Topic | 0-Based Cell Index | Key Lines / Operations |
 |---|---|---|
-| Load Spanish fastText | [Cell 12](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 1–19 (`load_vec(spanish_path, nmax)`) |
-| Load missing Shift Ori embedding | [Cell 14](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 1–4 (`./data/ori_offset_debiased_ES_embeddings.txt`) |
-| `doPCA` with operator precedence bug | [Cell 36](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 6–9 (`center = (embedding[a] + embedding[b]/2)`) |
-| Grammatical gender LinearSVC fit | [Cell 73](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 12–17 (`clf_3000 = LinearSVC()`, normalized coef) |
-| LDA failure | [Cell 75](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Uncaught `ValueError` in `LinearDiscriminantAnalysis` |
-| Cosine 0.389 reproduction | [Cell 77](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 1–2 (`cos_sim` outputs 0.38851) |
-| Definition of `drop(u, v)` (Eq. 2) | [Cell 78](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 3–5 (`drop(u, v)`) |
-| Definition of `modified_WEAT` | [Cell 217](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 1–28 (returns `[diff, abs_diff]`) |
-| Definition of `_weat_pval` | [Cell 230](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 7, 20–23 (`stat > test_stat`) |
-| Occupation word lists (58 pairs) | [Cell 234](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 1–3 (`ES_male_occupation_words`, `ES_female_occupation_words`) |
-| Shift Ori offset calculation | [Cell 273](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 1–5 (`offset_list_ori_ES`) |
-| Shift Ori offset addition | [Cell 312](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 1–7 (adds offset along gender direction) |
-| MWEAT evaluation (0.3090, p=0.269) | [Cell 305](file:///Users/watcher/zhou-blind-check/zhou_repo/bias_emnlp19.ipynb) | Lines 1–3 (`_weat_pval` call) |
+| Load Spanish fastText | [Cell 12](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 1–19 (`load_vec(spanish_path, nmax)`) |
+| Load missing Shift Ori embedding | [Cell 14](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 1–4 (`./data/ori_offset_debiased_ES_embeddings.txt`) |
+| `doPCA` with operator precedence bug | [Cell 36](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 6–9 (`center = (embedding[a] + embedding[b]/2)`) |
+| Grammatical gender LinearSVC fit | [Cell 73](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 12–17 (`clf_3000 = LinearSVC()`, normalized coef) |
+| LDA failure | [Cell 75](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Uncaught `ValueError` in `LinearDiscriminantAnalysis` |
+| Cosine 0.389 reproduction | [Cell 77](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 1–2 (`cos_sim` outputs 0.38851) |
+| Definition of `drop(u, v)` (Eq. 2) | [Cell 78](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 3–5 (`drop(u, v)`) |
+| Definition of `modified_WEAT` | [Cell 217](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 1–28 (returns `[diff, abs_diff]`) |
+| Definition of `_weat_pval` | [Cell 230](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 7, 20–23 (`stat > test_stat`) |
+| Occupation word lists (58 pairs) | [Cell 234](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 1–3 (`ES_male_occupation_words`, `ES_female_occupation_words`) |
+| Shift Ori offset calculation | [Cell 273](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 1–5 (`offset_list_ori_ES`) |
+| Shift Ori offset addition | [Cell 312](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 1–7 (adds offset along gender direction) |
+| MWEAT evaluation (0.3090, p=0.269) | [Cell 305](https://github.com/shaoxia57/Bias_in_Gendered_Languages/blob/6392702/bias_emnlp19.ipynb) | Lines 1–3 (`_weat_pval` call) |
