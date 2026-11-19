@@ -19,7 +19,7 @@ on Table 1, Table 2 has no feminine cues, the French numbers come from an unrele
 attribute lists have errors. With a fair zero point their monolingual asymmetry is inconclusive in
 Spanish and borderline in French. Grammatical gender of inanimates survives the mitigations; human
 gender ratings of objects show up in the vectors. Claim-by-claim table: `docs/zhou-summary.md`;
-inanimates: `docs/inanimates-summary.md`; every upstream issue (Z1–Z35): `docs/upstream-issues.md`.
+inanimates: `docs/inanimates-summary.md`; every upstream issue (Z1–Z35; Z30 retracted): `docs/upstream-issues.md`.
 
 **Authors.** Zhou et al. were contacted on 2026-11-11, before any write-up, and are preparing a
 correction.
