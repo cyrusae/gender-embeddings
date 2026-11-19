@@ -1,0 +1,61 @@
+  es primary, no fem_also_noun           shift_ori     intrusion  0.1824  0.0661  0.2961         present       69           67     54
+  es primary, no fem_also_noun           shift_ori agreement_gap  0.3262  0.2341  0.4165         present       69           67     54
+  es primary, no fem_also_noun           shift_ori invariant_gap  0.4051  0.3029  0.5032         present       69           67     54
+  es primary, no fem_also_noun          hybrid_ori     intrusion  0.1895  0.0836  0.2936         present       69           67     54
+  es primary, no fem_also_noun          hybrid_ori agreement_gap  0.3418  0.2591  0.4231         present       69           67     54
+  es primary, no fem_also_noun          hybrid_ori invariant_gap  0.4512  0.3633  0.5360         present       69           67     54
+  es primary, no fem_also_noun  shift_ori-original     intrusion -0.1056 -0.1457 -0.0682         reduces       69           67     54
+  es primary, no fem_also_noun  shift_ori-original agreement_gap -0.0631 -0.0863 -0.0414         reduces       69           67     54
+  es primary, no fem_also_noun  shift_ori-original invariant_gap -0.0789 -0.1180 -0.0464         reduces       69           67     54
+  es primary, no fem_also_noun hybrid_ori-original     intrusion -0.0984 -0.1610 -0.0406         reduces       69           67     54
+  es primary, no fem_also_noun hybrid_ori-original agreement_gap -0.0475 -0.0862 -0.0091         reduces       69           67     54
+  es primary, no fem_also_noun hybrid_ori-original invariant_gap -0.0328 -0.0716  0.0053 no clear change       69           67     54
+  fr                   primary            original     intrusion  0.1914  0.0065  0.3710         present       86           60     22
+  fr                   primary            original agreement_gap  0.3069  0.1363  0.4589         present       86           60     22
+  fr                   primary            original invariant_gap  0.3988  0.2270  0.5581         present       86           60     22
+  fr                   primary           shift_ori     intrusion  0.0958 -0.0987  0.2818    inconclusive       86           60     22
+  fr                   primary           shift_ori agreement_gap  0.2424  0.0656  0.4011         present       86           60     22
+  fr                   primary           shift_ori invariant_gap  0.2990  0.1054  0.4756         present       86           60     22
+  fr                   primary          hybrid_ori     intrusion  0.1445 -0.0389  0.3224    inconclusive       86           60     22
+  fr                   primary          hybrid_ori agreement_gap  0.2702  0.0991  0.4248         present       86           60     22
+  fr                   primary          hybrid_ori invariant_gap  0.3831  0.1999  0.5483         present       86           60     22
+  fr                   primary  shift_ori-original     intrusion -0.0956 -0.1298 -0.0641         reduces       86           60     22
+  fr                   primary  shift_ori-original agreement_gap -0.0644 -0.0902 -0.0412         reduces       86           60     22
+  fr                   primary  shift_ori-original invariant_gap -0.0998 -0.1591 -0.0525         reduces       86           60     22
+  fr                   primary hybrid_ori-original     intrusion -0.0469 -0.1003  0.0017 no clear change       86           60     22
+  fr                   primary hybrid_ori-original agreement_gap -0.0366 -0.0827  0.0050 no clear change       86           60     22
+  fr                   primary hybrid_ori-original invariant_gap -0.0157 -0.0709  0.0322 no clear change       86           60     22
+  fr primary, no fem_also_noun            original     intrusion  0.1942  0.0083  0.3757         present       73           60     22
+  fr primary, no fem_also_noun            original agreement_gap  0.3111  0.1449  0.4647         present       73           60     22
+  fr primary, no fem_also_noun            original invariant_gap  0.3988  0.2285  0.5591         present       73           60     22
+  fr primary, no fem_also_noun           shift_ori     intrusion  0.1023 -0.0943  0.2895    inconclusive       73           60     22
+  fr primary, no fem_also_noun           shift_ori agreement_gap  0.2485  0.0719  0.4077         present       73           60     22
+  fr primary, no fem_also_noun           shift_ori invariant_gap  0.2990  0.1072  0.4745         present       73           60     22
+  fr primary, no fem_also_noun          hybrid_ori     intrusion  0.1436 -0.0427  0.3211    inconclusive       73           60     22
+  fr primary, no fem_also_noun          hybrid_ori agreement_gap  0.2684  0.0995  0.4240         present       73           60     22
+  fr primary, no fem_also_noun          hybrid_ori invariant_gap  0.3831  0.2013  0.5488         present       73           60     22
+  fr primary, no fem_also_noun  shift_ori-original     intrusion -0.0919 -0.1276 -0.0601         reduces       73           60     22
+  fr primary, no fem_also_noun  shift_ori-original agreement_gap -0.0627 -0.0887 -0.0391         reduces       73           60     22
+  fr primary, no fem_also_noun  shift_ori-original invariant_gap -0.0998 -0.1598 -0.0531         reduces       73           60     22
+  fr primary, no fem_also_noun hybrid_ori-original     intrusion -0.0506 -0.1036 -0.0019         reduces       73           60     22
+  fr primary, no fem_also_noun hybrid_ori-original agreement_gap -0.0427 -0.0878 -0.0019         reduces       73           60     22
+  fr primary, no fem_also_noun hybrid_ori-original invariant_gap -0.0157 -0.0692  0.0311 no clear change       73           60     22
+lang   score  beta_std     lo    hi  n_pairs   verdict
+  es      wb    -0.145 -0.390 0.144       64 not shown
+  es glasgow    -0.097 -0.361 0.198       54 not shown
+  fr      wb    -0.066 -0.314 0.191       71 not shown
+  fr glasgow    -0.100 -0.409 0.215       55 not shown
+lang  n  term  beta     lo    hi        sig
+  es 54     D 0.055 -0.200 0.289 includes 0
+  es 54     R 0.318 -0.009 0.595 includes 0
+  es 54     H 0.162 -0.087 0.422 includes 0
+  es 54 S_bls 0.302 -0.007 0.524 includes 0
+lang    masc     fem      en  intrusion  agree_m  agree_f
+  es   ciego   ciega   blind      0.177    0.760    0.413
+  es enfermo enferma    sick      0.259    0.738    0.337
+  es    loco    loca   crazy      0.214    0.776    0.411
+  es    mudo    muda    mute      0.378    0.603    0.213
+  es    sano    sana healthy      0.337    0.722    0.299
+  es   sordo   sorda    deaf      0.244    0.688    0.344
+=== WPCUES done
+=== MIDRUN rc=0
