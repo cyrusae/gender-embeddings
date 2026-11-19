@@ -24,7 +24,7 @@ inanimates: `docs/inanimates-summary.md`; every upstream issue (Z1–Z35; Z30 re
 **Authors.** Zhou et al. were contacted on 2026-11-11, before any write-up, and are preparing a
 correction.
 
-**Open.** French person-noun follow-ups; checking the mitigated results against the authors' files if
+**Open.** Checking the mitigated results against the authors' files if
 they are released.
 
 ## Conventions
@@ -66,6 +66,7 @@ they are released.
 | Person-noun baseline | `wordpair-persons-prereg.md` | persons none, occupations 0.29; masculine default 0.28 vs 0.51; CSLS 0.19 |
 | Person-noun zero point (ES) | `persons-zero-point-prereg.md` | inconclusive, groups not distinguishable |
 | Person-noun generic masculine (ES) | `persons-genmasc-prereg.md` | occupations supported, persons inconclusive (unstable with vocabulary) |
+| French person-noun replication | `persons-fr-prereg.md` | occupation-specific intrusion replicates (−0.23); zero point and generic masculine inconclusive |
 
 Reproductions without a prereg: `scripts/zhou_shift.py`, `zhou_hybrid.py`, `zhou_figures.py`,
 `zhou_sec43_44.py`, `zhou_wordpair.py`, `repro_es.py`, `word_similarity_es.py`; the Shift identity is
