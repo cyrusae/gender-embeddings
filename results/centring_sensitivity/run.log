@@ -1,0 +1,197 @@
+### c1_run.py es
+                         arm attributes vocab subset  n_m  n_f  delta  ci_lo  ci_hi  p_perm  mean_abs_bw
+                  1_original         es   50k    all 1456 1003 0.0299 0.0280 0.0319     0.0       0.0221
+                  1_original         es  200k    all 4424 3702 0.0350 0.0340 0.0361     0.0       0.0240
+                  1_original         en   50k    all 1456 1003 0.0139 0.0117 0.0162     0.0       0.0230
+                  1_original         en  200k    all 4424 3702 0.0181 0.0169 0.0193     0.0       0.0251
+  2_shift_ori_as_implemented         es   50k    all 1456 1003 0.0252 0.0243 0.0261     0.0       0.0139
+  2_shift_ori_as_implemented         es  200k    all 4424 3702 0.0248 0.0243 0.0253     0.0       0.0139
+  2_shift_ori_as_implemented         en   50k    all 1456 1003 0.0139 0.0117 0.0162     0.0       0.0230
+  2_shift_ori_as_implemented         en  200k    all 4424 3702 0.0181 0.0169 0.0193     0.0       0.0251
+    3_shift_ori_as_specified         es   50k    all 1456 1003 0.0251 0.0242 0.0260     0.0       0.0139
+    3_shift_ori_as_specified         es  200k    all 4424 3702 0.0245 0.0241 0.0250     0.0       0.0138
+    3_shift_ori_as_specified         en   50k    all 1456 1003 0.0082 0.0068 0.0096     0.0       0.0140
+    3_shift_ori_as_specified         en  200k    all 4424 3702 0.0071 0.0063 0.0078     0.0       0.0136
+4a_hybrid_ori_as_implemented         es   50k    all 1456 1003 0.0252 0.0243 0.0261     0.0       0.0139
+4a_hybrid_ori_as_implemented         es  200k    all 4424 3702 0.0248 0.0243 0.0253     0.0       0.0139
+4a_hybrid_ori_as_implemented         en   50k    all 1456 1003 0.0249 0.0225 0.0272     0.0       0.0247
+4a_hybrid_ori_as_implemented         en  200k    all 4424 3702 0.0261 0.0249 0.0273     0.0       0.0243
+  4b_hybrid_ori_as_specified         es   50k    all 1456 1003 0.0251 0.0242 0.0260     0.0       0.0139
+  4b_hybrid_ori_as_specified         es  200k    all 4424 3702 0.0245 0.0241 0.0250     0.0       0.0138
+  4b_hybrid_ori_as_specified         en   50k    all 1456 1003 0.0196 0.0178 0.0215     0.0       0.0212
+  4b_hybrid_ori_as_specified         en  200k    all 4424 3702 0.0158 0.0149 0.0168     0.0       0.0199
+attributes                          arm  delta_original  delta_arm  ratio  verdict
+        es   2_shift_ori_as_implemented          0.0299     0.0252 0.8429 survives
+        es     3_shift_ori_as_specified          0.0299     0.0251 0.8391 survives
+        es 4a_hybrid_ori_as_implemented          0.0299     0.0252 0.8429 survives
+        es   4b_hybrid_ori_as_specified          0.0299     0.0251 0.8391 survives
+        en   2_shift_ori_as_implemented          0.0139     0.0139 1.0000 survives
+        en     3_shift_ori_as_specified          0.0139     0.0082 0.5911 survives
+        en 4a_hybrid_ori_as_implemented          0.0139     0.0249 1.7850 survives
+        en   4b_hybrid_ori_as_specified          0.0139     0.0196 1.4076 survives
+{"shift_cos_sem_gram": 0.3740682875856952, "hybrid_cos_sem_gram": 0.37406828762565913}
+=== C1 done
+### done c1_run.py es
+### c1_run.py fr
+                         arm attributes vocab subset  n_m  n_f  delta  ci_lo  ci_hi  p_perm  mean_abs_bw
+                  1_original         fr   50k    all 2022 1483 0.0241 0.0224 0.0257     0.0       0.0211
+                  1_original         fr  200k    all 4624 3822 0.0283 0.0272 0.0294     0.0       0.0237
+                  1_original         en   50k    all 2022 1483 0.0038 0.0019 0.0056     0.0       0.0207
+                  1_original         en  200k    all 4624 3822 0.0091 0.0079 0.0104     0.0       0.0236
+  2_shift_ori_as_implemented         fr   50k    all 2022 1483 0.0261 0.0249 0.0273     0.0       0.0176
+  2_shift_ori_as_implemented         fr  200k    all 4624 3822 0.0281 0.0274 0.0289     0.0       0.0201
+  2_shift_ori_as_implemented         en   50k    all 2022 1483 0.0038 0.0019 0.0056     0.0       0.0207
+  2_shift_ori_as_implemented         en  200k    all 4624 3822 0.0091 0.0079 0.0104     0.0       0.0236
+    3_shift_ori_as_specified         fr   50k    all 2022 1483 0.0274 0.0265 0.0282     0.0       0.0161
+    3_shift_ori_as_specified         fr  200k    all 4624 3822 0.0269 0.0263 0.0275     0.0       0.0171
+    3_shift_ori_as_specified         en   50k    all 2022 1483 0.0057 0.0043 0.0070     0.0       0.0159
+    3_shift_ori_as_specified         en  200k    all 4624 3822 0.0072 0.0062 0.0081     0.0       0.0175
+4a_hybrid_ori_as_implemented         fr   50k    all 2022 1483 0.0261 0.0249 0.0273     0.0       0.0176
+4a_hybrid_ori_as_implemented         fr  200k    all 4624 3822 0.0281 0.0274 0.0289     0.0       0.0201
+4a_hybrid_ori_as_implemented         en   50k    all 2022 1483 0.0094 0.0076 0.0112     0.0       0.0219
+4a_hybrid_ori_as_implemented         en  200k    all 4624 3822 0.0117 0.0106 0.0129     0.0       0.0222
+  4b_hybrid_ori_as_specified         fr   50k    all 2022 1483 0.0274 0.0265 0.0282     0.0       0.0161
+  4b_hybrid_ori_as_specified         fr  200k    all 4624 3822 0.0269 0.0263 0.0275     0.0       0.0171
+  4b_hybrid_ori_as_specified         en   50k    all 2022 1483 0.0113 0.0096 0.0128     0.0       0.0198
+  4b_hybrid_ori_as_specified         en  200k    all 4624 3822 0.0098 0.0089 0.0108     0.0       0.0193
+attributes                          arm  delta_original  delta_arm  ratio  verdict
+        fr   2_shift_ori_as_implemented          0.0241     0.0261 1.0839 survives
+        fr     3_shift_ori_as_specified          0.0241     0.0274 1.1355 survives
+        fr 4a_hybrid_ori_as_implemented          0.0241     0.0261 1.0839 survives
+        fr   4b_hybrid_ori_as_specified          0.0241     0.0274 1.1355 survives
+        en   2_shift_ori_as_implemented          0.0038     0.0038 1.0000 survives
+        en     3_shift_ori_as_specified          0.0038     0.0057 1.4954 survives
+        en 4a_hybrid_ori_as_implemented          0.0038     0.0094 2.4687 survives
+        en   4b_hybrid_ori_as_specified          0.0038     0.0113 2.9524 survives
+{"shift_cos_sem_gram": 0.3813291641910823, "hybrid_cos_sem_gram": 0.38132916418819385}
+=== C1 done
+### done c1_run.py fr
+### gvalnorm_run.py es
+{
+ "50k": {
+  "n": 547,
+  "n_m": 362,
+  "n_f": 185,
+  "english_anchor_r": 0.5808306826804808,
+  "anchor_n": 547
+ },
+ "200k": {
+  "n": 1139,
+  "n_m": 730,
+  "n_f": 409,
+  "english_anchor_r": 0.5780949304275604,
+  "anchor_n": 1139
+ }
+}
+                         arm attributes  beta_G  beta_G_lo  beta_G_hi  beta_H  beta_H_lo  beta_H_hi  r_gend  r_gend_m  r_gend_f
+                  1_original         es   1.117      0.999      1.232   0.252      0.176      0.323   0.318     0.268     0.375
+                  1_original         en   0.502      0.348      0.657   0.337      0.246      0.423   0.362     0.316     0.389
+  2_shift_ori_as_implemented         es   1.607      1.539      1.680   0.016     -0.040      0.070   0.108     0.016     0.049
+  2_shift_ori_as_implemented         en   0.502      0.348      0.657   0.337      0.246      0.423   0.362     0.316     0.389
+    3_shift_ori_as_specified         es   1.602      1.531      1.676   0.005     -0.053      0.060   0.096    -0.001     0.030
+    3_shift_ori_as_specified         en   0.449      0.283      0.610   0.146      0.068      0.226   0.161     0.122     0.167
+4a_hybrid_ori_as_implemented         es   1.607      1.539      1.680   0.016     -0.040      0.070   0.108     0.016     0.049
+4a_hybrid_ori_as_implemented         en   0.856      0.715      0.996   0.171      0.089      0.248   0.218     0.164     0.229
+  4b_hybrid_ori_as_specified         es   1.602      1.531      1.676   0.005     -0.053      0.060   0.096    -0.001     0.030
+  4b_hybrid_ori_as_specified         en   0.834      0.686      0.984  -0.040     -0.121      0.041   0.002    -0.038    -0.067
+attributes                          arm  tracks_human_ratings_original  beta_H_orig  beta_H_arm beta_H_verdict  beta_G_orig  beta_G_arm beta_G_verdict
+        es   2_shift_ori_as_implemented                           True        0.252       0.016        removed        1.117       1.607       survives
+        es     3_shift_ori_as_specified                           True        0.252       0.005        removed        1.117       1.602       survives
+        es 4a_hybrid_ori_as_implemented                           True        0.252       0.016        removed        1.117       1.607       survives
+        es   4b_hybrid_ori_as_specified                           True        0.252       0.005        removed        1.117       1.602       survives
+        en   2_shift_ori_as_implemented                           True        0.337       0.337       survives        0.502       0.502       survives
+        en     3_shift_ori_as_specified                           True        0.337       0.146        reduced        0.502       0.449       survives
+        en 4a_hybrid_ori_as_implemented                           True        0.337       0.171       survives        0.502       0.856       survives
+        en   4b_hybrid_ori_as_specified                           True        0.337      -0.040        removed        0.502       0.834       survives
+=== GVALNORM done
+### done gvalnorm_run.py es
+### gvalnorm_run.py fr
+{
+ "50k": {
+  "n": 813,
+  "n_m": 474,
+  "n_f": 339,
+  "english_anchor_r": 0.513059763014557,
+  "anchor_n": 813
+ },
+ "200k": {
+  "n": 1276,
+  "n_m": 748,
+  "n_f": 528,
+  "english_anchor_r": 0.5420912141461901,
+  "anchor_n": 1275
+ }
+}
+                         arm attributes  beta_G  beta_G_lo  beta_G_hi  beta_H  beta_H_lo  beta_H_hi  r_gend  r_gend_m  r_gend_f
+                  1_original         fr   0.943      0.840      1.044   0.179      0.112      0.248   0.210     0.146     0.265
+                  1_original         en   0.146      0.013      0.281   0.279      0.210      0.353   0.281     0.249     0.313
+  2_shift_ori_as_implemented         fr   1.277      1.196      1.355   0.152      0.096      0.211   0.198     0.141     0.261
+  2_shift_ori_as_implemented         en   0.146      0.013      0.281   0.279      0.210      0.353   0.281     0.249     0.313
+    3_shift_ori_as_specified         fr   1.500      1.442      1.561   0.067      0.021      0.114   0.123     0.068     0.142
+    3_shift_ori_as_specified         en   0.286      0.151      0.418   0.216      0.154      0.282   0.227     0.206     0.235
+4a_hybrid_ori_as_implemented         fr   1.277      1.196      1.355   0.152      0.096      0.211   0.198     0.141     0.261
+4a_hybrid_ori_as_implemented         en   0.403      0.272      0.534   0.077      0.006      0.146   0.091     0.085     0.067
+  4b_hybrid_ori_as_specified         fr   1.500      1.442      1.561   0.067      0.021      0.114   0.123     0.068     0.142
+  4b_hybrid_ori_as_specified         en   0.506      0.380      0.634  -0.030     -0.097      0.042  -0.008     0.011    -0.085
+attributes                          arm  tracks_human_ratings_original  beta_H_orig  beta_H_arm beta_H_verdict  beta_G_orig  beta_G_arm beta_G_verdict
+        fr   2_shift_ori_as_implemented                           True        0.179       0.152       survives        0.943       1.277       survives
+        fr     3_shift_ori_as_specified                           True        0.179       0.067        reduced        0.943       1.500       survives
+        fr 4a_hybrid_ori_as_implemented                           True        0.179       0.152       survives        0.943       1.277       survives
+        fr   4b_hybrid_ori_as_specified                           True        0.179       0.067        reduced        0.943       1.500       survives
+        en   2_shift_ori_as_implemented                           True        0.279       0.279       survives        0.146       0.146       survives
+        en     3_shift_ori_as_specified                           True        0.279       0.216       survives        0.146       0.286       survives
+        en 4a_hybrid_ori_as_implemented                           True        0.279       0.077        reduced        0.146       0.403       survives
+        en   4b_hybrid_ori_as_specified                           True        0.279      -0.030        removed        0.146       0.506       survives
+=== GVALNORM done
+### done gvalnorm_run.py fr
+### gvalnorm_orth.py es
+                         arm attributes  cos_a_ds
+                  1_original         es     0.848
+                  1_original         en     0.785
+  2_shift_ori_as_implemented         es     0.040
+  2_shift_ori_as_implemented         en     0.785
+    3_shift_ori_as_specified         es     0.040
+    3_shift_ori_as_specified         en     0.785
+4a_hybrid_ori_as_implemented         es     0.040
+4a_hybrid_ori_as_implemented         en     0.566
+  4b_hybrid_ori_as_specified         es     0.040
+  4b_hybrid_ori_as_specified         en     0.566
+attributes                          arm  beta_H  beta_H_lo  beta_H_hi tracks_off_axis beta_H_verdict  share_off_axis  beta_H_full  beta_H_full_lo  beta_H_full_hi full_verdict
+        es                   1_original  -0.009     -0.068      0.047           False            NaN          -0.037        0.252           0.176           0.323          NaN
+        es   2_shift_ori_as_implemented   0.005     -0.053      0.060            None        reduced           0.288        0.016          -0.040           0.070      removed
+        es     3_shift_ori_as_specified   0.005     -0.053      0.060            None        reduced           1.000        0.005          -0.053           0.060      removed
+        es 4a_hybrid_ori_as_implemented   0.005     -0.053      0.060            None        reduced           0.288        0.016          -0.040           0.070      removed
+        es   4b_hybrid_ori_as_specified   0.005     -0.053      0.060            None        reduced           1.000        0.005          -0.053           0.060      removed
+        en                   1_original   0.146      0.068      0.225            True            NaN           0.433        0.337           0.246           0.423          NaN
+        en   2_shift_ori_as_implemented   0.146      0.068      0.225            None       survives           0.433        0.337           0.246           0.423     survives
+        en     3_shift_ori_as_specified   0.146      0.068      0.226            None       survives           1.000        0.146           0.068           0.226      reduced
+        en 4a_hybrid_ori_as_implemented  -0.040     -0.121      0.042            None        reduced          -0.233        0.171           0.089           0.248     survives
+        en   4b_hybrid_ori_as_specified  -0.040     -0.121      0.041            None        reduced           1.000       -0.040          -0.121           0.041      removed
+=== GVALNORM ORTH done
+### done gvalnorm_orth.py es
+### gvalnorm_orth.py fr
+                         arm attributes  cos_a_ds
+                  1_original         fr     0.829
+                  1_original         en     0.667
+  2_shift_ori_as_implemented         fr     0.617
+  2_shift_ori_as_implemented         en     0.667
+    3_shift_ori_as_specified         fr     0.617
+    3_shift_ori_as_specified         en     0.667
+4a_hybrid_ori_as_implemented         fr     0.617
+4a_hybrid_ori_as_implemented         en     0.507
+  4b_hybrid_ori_as_specified         fr     0.617
+  4b_hybrid_ori_as_specified         en     0.507
+attributes                          arm  beta_H  beta_H_lo  beta_H_hi tracks_off_axis beta_H_verdict  share_off_axis  beta_H_full  beta_H_full_lo  beta_H_full_hi full_verdict
+        fr                   1_original   0.056      0.008      0.105            True            NaN           0.315        0.179           0.112           0.248          NaN
+        fr   2_shift_ori_as_implemented   0.067      0.021      0.114            None       survives           0.438        0.152           0.096           0.211     survives
+        fr     3_shift_ori_as_specified   0.067      0.021      0.114            None       survives           1.000        0.067           0.021           0.114      reduced
+        fr 4a_hybrid_ori_as_implemented   0.067      0.021      0.114            None       survives           0.438        0.152           0.096           0.211     survives
+        fr   4b_hybrid_ori_as_specified   0.067      0.021      0.114            None       survives           1.000        0.067           0.021           0.114      reduced
+        en                   1_original   0.216      0.154      0.282            True            NaN           0.775        0.279           0.210           0.353          NaN
+        en   2_shift_ori_as_implemented   0.216      0.154      0.282            None       survives           0.775        0.279           0.210           0.353     survives
+        en     3_shift_ori_as_specified   0.216      0.154      0.282            None       survives           1.000        0.216           0.154           0.282     survives
+        en 4a_hybrid_ori_as_implemented  -0.029     -0.097      0.042            None        removed          -0.381        0.077           0.006           0.146      reduced
+        en   4b_hybrid_ori_as_specified  -0.030     -0.097      0.042            None        removed           1.000       -0.030          -0.097           0.042      removed
+=== GVALNORM ORTH done
+### done gvalnorm_orth.py fr
+=== MIDPT done
