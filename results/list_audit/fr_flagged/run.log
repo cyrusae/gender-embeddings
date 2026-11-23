@@ -1,0 +1,277 @@
+### zhou_zero_point fr
+{
+ "n_pairs": 20,
+ "listed": 3110,
+ "dropped_not_in_50k": [
+  "automobiliste",
+  "dupe",
+  "gamer",
+  "gourmet",
+  "guette"
+ ],
+ "dropped_overlap_occupation_or_attribute": [],
+ "strict_epicenes_after_coverage": {
+  "m": 74,
+  "f": 23
+ },
+ "floor_met": true,
+ "primary_anchor": "epicene_strict"
+}
+    space yardstick         anchor  n_m  n_f  n_multi       c    c_lo   c_hi     raw       A    A_lo    A_hi                     verdict
+ original    native epicene_strict   74   23        0 -0.0031 -0.0276 0.0222 -1.5665 -1.4442 -3.0329  0.3325                inconclusive
+ original    native  epicene_broad   74   23        0 -0.0031 -0.0273 0.0228 -1.5665 -1.4442 -3.0125  0.3114                inconclusive
+ original    native      inanimate 1452 1452        0 -0.0049 -0.0183 0.0086 -1.5665 -1.3699 -3.7289  1.4178                inconclusive
+ original    native         common    0    0      104  0.0144 -0.0324 0.0639 -1.5665 -2.1416 -3.0086 -1.2084 asymmetry: feminine further
+ original   english epicene_strict   74   23        0 -0.0089 -0.0389 0.0219 -2.1910 -1.8333 -3.1399 -0.4519 asymmetry: feminine further
+ original   english  epicene_broad   74   23        0 -0.0089 -0.0392 0.0220 -2.1910 -1.8333 -3.1604 -0.4709 asymmetry: feminine further
+ original   english      inanimate 1452 1452        0 -0.0043 -0.0191 0.0107 -2.1910 -2.0186 -3.6103 -0.1205 asymmetry: feminine further
+ original   english         common    0    0      104 -0.0053 -0.0445 0.0371 -2.1910 -1.9803 -2.8315 -1.0949 asymmetry: feminine further
+shift_ori    native epicene_strict   74   23        0 -0.0031 -0.0276 0.0222  0.3872  0.5095 -0.7222  1.8035                inconclusive
+shift_ori    native  epicene_broad   74   23        0 -0.0031 -0.0273 0.0228  0.3872  0.5095 -0.7614  1.7868                inconclusive
+shift_ori    native      inanimate 1452 1452        0 -0.0049 -0.0183 0.0086  0.3872  0.5838 -1.4574  2.7447                inconclusive
+shift_ori    native         common    0    0      104  0.0144 -0.0324 0.0639  0.3872 -0.1880 -0.9672  0.5663                inconclusive
+shift_ori   english epicene_strict   74   23        0 -0.0089 -0.0389 0.0219 -0.5365 -0.1787 -1.2855  0.9624                inconclusive
+shift_ori   english  epicene_broad   74   23        0 -0.0089 -0.0392 0.0220 -0.5365 -0.1787 -1.2899  0.9361                inconclusive
+shift_ori   english      inanimate 1452 1452        0 -0.0043 -0.0191 0.0107 -0.5365 -0.3640 -1.8654  1.2704                inconclusive
+shift_ori   english         common    0    0      104 -0.0053 -0.0445 0.0371 -0.5365 -0.3258 -0.9874  0.3296                inconclusive
+    space yardstick  anchors_agree        primary             verdict_primary       A    A_lo    A_hi     raw loo_depends_on S1-S6_depends_on            S4_broad_verdict                           label
+ original   english           True epicene_strict asymmetry: feminine further -1.8333 -3.1399 -0.4519 -2.1910             []               [] asymmetry: feminine further                                
+ original    native           True epicene_strict                inconclusive -1.4442 -3.0329  0.3325 -1.5665             []               []                inconclusive                                
+shift_ori   english           True epicene_strict                inconclusive -0.1787 -1.2855  0.9624 -0.5365             []         [S1, S5]                inconclusive algebraically constrained (Z14)
+shift_ori    native           True epicene_strict                inconclusive  0.5095 -0.7222  1.8035  0.3872             []               []                inconclusive algebraically constrained (Z14)
+=== ZEROPOINT done
+### done zero
+### wordpair_cues
+Downloading statsmodels (11.0MiB)
+ Downloaded statsmodels
+  return _nanquantile_unchecked(
+Traceback (most recent call last):
+  File "scripts/wordpair_cues.py", line 153, in <module>
+    main()
+  File "scripts/wordpair_cues.py", line 80, in main
+    assert [tuple(x) for x in m[["fem", "masc", "en"]].values] == [tuple(o) for o in occ_all]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+### done wordpair_cues
+### generic_masculine
+lang                        list          measure   value      lo      hi
+  fr                     primary               Ms  0.0780  0.0229  0.1033
+  fr                     primary               Fs -0.2527 -0.2711 -0.1564
+  fr                     primary               Mp  0.0439 -0.0005  0.0796
+  fr                     primary               Fp -0.1667 -0.1890 -0.0953
+  fr                     primary            rho_m  0.5634 -0.0124  1.2432
+  fr                     primary            rho_f  0.6594  0.5422  0.7518
+  fr                     primary        delta_rho  0.0960 -0.6628  0.7182
+  fr                     primary                G  0.0437  0.0049  0.0885
+  fr                     primary           margin  0.0390  0.0115  0.0517
+  fr                     primary G_over_margin_lo  0.0047 -0.0351  0.0585
+  fr                     primary G_over_margin_hi  0.0827  0.0264  0.1229
+  fr no_homographs (descriptive)               Ms  0.0750  0.0204  0.1001
+  fr no_homographs (descriptive)               Fs -0.2599 -0.2776 -0.1618
+  fr no_homographs (descriptive)               Mp  0.0407 -0.0023  0.0770
+  fr no_homographs (descriptive)               Fp -0.1727 -0.1956 -0.1003
+  fr no_homographs (descriptive)            rho_m  0.5436 -0.0725  1.2321
+  fr no_homographs (descriptive)            rho_f  0.6646  0.5515  0.7584
+  fr no_homographs (descriptive)        delta_rho  0.1211 -0.6467  0.7832
+  fr no_homographs (descriptive)                G  0.0405  0.0017  0.0848
+  fr no_homographs (descriptive)           margin  0.0375  0.0102  0.0500
+  fr no_homographs (descriptive) G_over_margin_lo  0.0030 -0.0363  0.0574
+  fr no_homographs (descriptive) G_over_margin_hi  0.0780  0.0238  0.1184
+  es                     primary               Ms  0.1036  0.0500  0.1337
+  es                     primary               Fs -0.2048 -0.2379 -0.1243
+  es                     primary               Mp  0.0241 -0.0202  0.0581
+  es                     primary               Fp -0.1522 -0.1864 -0.0830
+  es                     primary            rho_m  0.2325 -0.3429  0.4931
+  es                     primary            rho_f  0.7432  0.5790  0.8622
+  es                     primary        delta_rho  0.5106  0.1445  1.1389
+  es                     primary                G  0.0065 -0.0200  0.0333
+  es                     primary           margin  0.0518  0.0250  0.0669
+  es                     primary G_over_margin_lo -0.0452 -0.0733 -0.0067
+  es                     primary G_over_margin_hi  0.0583  0.0171  0.0864
+  es no_homographs (descriptive)               Ms  0.0991  0.0465  0.1312
+  es no_homographs (descriptive)               Fs -0.2592 -0.2858 -0.1650
+  es no_homographs (descriptive)               Mp  0.0134 -0.0345  0.0519
+  es no_homographs (descriptive)               Fp -0.1940 -0.2251 -0.1128
+  es no_homographs (descriptive)            rho_m  0.1348 -0.6458  0.4562
+  es no_homographs (descriptive)            rho_f  0.7485  0.6172  0.8548
+  es no_homographs (descriptive)        delta_rho  0.6137  0.2117  1.4435
+  es no_homographs (descriptive)                G -0.0042 -0.0343  0.0260
+  es no_homographs (descriptive)           margin  0.0495  0.0233  0.0656
+  es no_homographs (descriptive) G_over_margin_lo -0.0537 -0.0830 -0.0120
+  es no_homographs (descriptive) G_over_margin_hi  0.0453  0.0009  0.0780
+[
+ {
+  "lang": "fr",
+  "list": "primary",
+  "n_listed": 36,
+  "n_usable": 30,
+  "floor_met": true,
+  "dropped_missing_form": [
+   "administrateur/administratrice",
+   "professeur/professeure",
+   "avocat/avocate",
+   "dessinateur/dessinatrice",
+   "éditeur/éditrice",
+   "mathématicien/mathématicienne"
+  ],
+  "reading_1_generic_masculine": "inconclusive",
+  "reading_2_masc_plural_at_neutral": "not shown",
+  "G_minus_margin_97.5": 0.058468992232347285,
+  "G_plus_margin_2.5": 0.026437591319263095
+ },
+ {
+  "lang": "fr",
+  "list": "no_homographs (descriptive)",
+  "n_listed": 35,
+  "n_usable": 29,
+  "floor_met": true,
+  "dropped_missing_form": [
+   "administrateur/administratrice",
+   "professeur/professeure",
+   "avocat/avocate",
+   "dessinateur/dessinatrice",
+   "éditeur/éditrice",
+   "mathématicien/mathématicienne"
+  ],
+  "reading_1_generic_masculine": "inconclusive",
+  "reading_2_masc_plural_at_neutral": "not shown",
+  "G_minus_margin_97.5": 0.05736180425177046,
+  "G_plus_margin_2.5": 0.02376328773549933
+ },
+ {
+  "lang": "es",
+  "list": "primary",
+  "n_listed": 54,
+  "n_usable": 43,
+  "floor_met": true,
+  "dropped_missing_form": [
+   "ingeniero/ingeniera",
+   "entrenador/entrenadora",
+   "locutor/locutora",
+   "barbero/barbera",
+   "capitán/capitana",
+   "coreógrafo/coreógrafa",
+   "consejero/consejera",
+   "juez/jueza",
+   "psicólogo/psicóloga",
+   "herrero/herrera",
+   "redactor/redactora"
+  ],
+  "reading_1_generic_masculine": "supported",
+  "reading_2_masc_plural_at_neutral": "at neutral",
+  "G_minus_margin_97.5": -0.006719526020779368,
+  "G_plus_margin_2.5": 0.017097757695458845
+ },
+ {
+  "lang": "es",
+  "list": "no_homographs (descriptive)",
+  "n_listed": 40,
+  "n_usable": 30,
+  "floor_met": true,
+  "dropped_missing_form": [
+   "ingeniero/ingeniera",
+   "entrenador/entrenadora",
+   "locutor/locutora",
+   "barbero/barbera",
+   "coreógrafo/coreógrafa",
+   "consejero/consejera",
+   "juez/jueza",
+   "psicólogo/psicóloga",
+   "herrero/herrera",
+   "redactor/redactora"
+  ],
+  "reading_1_generic_masculine": "supported",
+  "reading_2_masc_plural_at_neutral": "at neutral",
+  "G_minus_margin_97.5": -0.012043214387258288,
+  "G_plus_margin_2.5": 0.0009042022879693848
+ }
+]
+=== GENMASC done
+### done generic_masculine
+=== AUDITFR done
+### wordpair_cues (retry, full Zhou list; flags via clean_keep)
+  return _nanquantile_unchecked(
+lang                       set               space       measure   value      lo      hi         verdict  n_pairs  n_invariant  n_occ
+  es                disability            original     intrusion  0.2682  0.1446  0.3847         present        6            0     54
+  es                disability            original agreement_gap  0.3784  0.2856  0.4652         present        6            0     54
+  es                disability            original invariant_gap     NaN     NaN     NaN    inconclusive        6            0     54
+  es                   primary            original     intrusion  0.2912  0.1808  0.3947         present       87           67     54
+  es                   primary            original agreement_gap  0.3905  0.2999  0.4746         present       87           67     54
+  es                   primary            original invariant_gap  0.4840  0.3887  0.5709         present       87           67     54
+  es                   primary           shift_ori     intrusion  0.1824  0.0660  0.2958         present       87           67     54
+  es                   primary           shift_ori agreement_gap  0.3273  0.2337  0.4154         present       87           67     54
+  es                   primary           shift_ori invariant_gap  0.4002  0.2947  0.4976         present       87           67     54
+  es                   primary          hybrid_ori     intrusion  0.1961  0.0911  0.3013         present       87           67     54
+  es                   primary          hybrid_ori agreement_gap  0.3481  0.2645  0.4282         present       87           67     54
+  es                   primary          hybrid_ori invariant_gap  0.4460  0.3573  0.5287         present       87           67     54
+  es                   primary  shift_ori-original     intrusion -0.1088 -0.1504 -0.0702         reduces       87           67     54
+  es                   primary  shift_ori-original agreement_gap -0.0631 -0.0868 -0.0415         reduces       87           67     54
+  es                   primary  shift_ori-original invariant_gap -0.0838 -0.1247 -0.0495         reduces       87           67     54
+  es                   primary hybrid_ori-original     intrusion -0.0951 -0.1554 -0.0396         reduces       87           67     54
+  es                   primary hybrid_ori-original agreement_gap -0.0424 -0.0804 -0.0055         reduces       87           67     54
+  es                   primary hybrid_ori-original invariant_gap -0.0380 -0.0772 -0.0005         reduces       87           67     54
+  es primary, no fem_also_noun            original     intrusion  0.2880  0.1809  0.3944         present       69           67     54
+  es primary, no fem_also_noun            original agreement_gap  0.3893  0.3008  0.4764         present       69           67     54
+  es primary, no fem_also_noun            original invariant_gap  0.4840  0.3916  0.5743         present       69           67     54
+  es primary, no fem_also_noun           shift_ori     intrusion  0.1771  0.0607  0.2911         present       69           67     54
+  es primary, no fem_also_noun           shift_ori agreement_gap  0.3246  0.2320  0.4153         present       69           67     54
+  es primary, no fem_also_noun           shift_ori invariant_gap  0.4002  0.2962  0.4989         present       69           67     54
+  es primary, no fem_also_noun          hybrid_ori     intrusion  0.1806  0.0727  0.2856         present       69           67     54
+  es primary, no fem_also_noun          hybrid_ori agreement_gap  0.3386  0.2550  0.4205         present       69           67     54
+  es primary, no fem_also_noun          hybrid_ori invariant_gap  0.4460  0.3577  0.5309         present       69           67     54
+  es primary, no fem_also_noun  shift_ori-original     intrusion -0.1108 -0.1528 -0.0714         reduces       69           67     54
+  es primary, no fem_also_noun  shift_ori-original agreement_gap -0.0647 -0.0889 -0.0422         reduces       69           67     54
+  es primary, no fem_also_noun  shift_ori-original invariant_gap -0.0838 -0.1249 -0.0494         reduces       69           67     54
+  es primary, no fem_also_noun hybrid_ori-original     intrusion -0.1074 -0.1708 -0.0493         reduces       69           67     54
+  es primary, no fem_also_noun hybrid_ori-original agreement_gap -0.0507 -0.0894 -0.0121         reduces       69           67     54
+  es primary, no fem_also_noun hybrid_ori-original invariant_gap -0.0380 -0.0775  0.0001 no clear change       69           67     54
+  fr                   primary            original     intrusion  0.2325  0.0426  0.4108         present       86           60     20
+  fr                   primary            original agreement_gap  0.3522  0.1957  0.4945         present       86           60     20
+  fr                   primary            original invariant_gap  0.4337  0.2586  0.5922         present       86           60     20
+  fr                   primary           shift_ori     intrusion  0.1199 -0.0773  0.3016    inconclusive       86           60     20
+  fr                   primary           shift_ori agreement_gap  0.2798  0.1180  0.4268         present       86           60     20
+  fr                   primary           shift_ori invariant_gap  0.3192  0.1228  0.4991         present       86           60     20
+  fr                   primary          hybrid_ori     intrusion  0.1723  0.0009  0.3353         present       86           60     20
+  fr                   primary          hybrid_ori agreement_gap  0.3139  0.1724  0.4457         present       86           60     20
+  fr                   primary          hybrid_ori invariant_gap  0.4255  0.2570  0.5776         present       86           60     20
+  fr                   primary  shift_ori-original     intrusion -0.1126 -0.1511 -0.0756         reduces       86           60     20
+  fr                   primary  shift_ori-original agreement_gap -0.0724 -0.0983 -0.0466         reduces       86           60     20
+  fr                   primary  shift_ori-original invariant_gap -0.1145 -0.1840 -0.0576         reduces       86           60     20
+  fr                   primary hybrid_ori-original     intrusion -0.0602 -0.1132 -0.0136         reduces       86           60     20
+  fr                   primary hybrid_ori-original agreement_gap -0.0383 -0.0816  0.0002 no clear change       86           60     20
+  fr                   primary hybrid_ori-original invariant_gap -0.0082 -0.0431  0.0309 no clear change       86           60     20
+  fr primary, no fem_also_noun            original     intrusion  0.2350  0.0424  0.4174         present       73           60     20
+  fr primary, no fem_also_noun            original agreement_gap  0.3566  0.1964  0.5061         present       73           60     20
+  fr primary, no fem_also_noun            original invariant_gap  0.4337  0.2540  0.5969         present       73           60     20
+  fr primary, no fem_also_noun           shift_ori     intrusion  0.1277 -0.0747  0.3160    inconclusive       73           60     20
+  fr primary, no fem_also_noun           shift_ori agreement_gap  0.2875  0.1209  0.4378         present       73           60     20
+  fr primary, no fem_also_noun           shift_ori invariant_gap  0.3192  0.1215  0.5042         present       73           60     20
+  fr primary, no fem_also_noun          hybrid_ori     intrusion  0.1746  0.0007  0.3427         present       73           60     20
+  fr primary, no fem_also_noun          hybrid_ori agreement_gap  0.3146  0.1722  0.4509         present       73           60     20
+  fr primary, no fem_also_noun          hybrid_ori invariant_gap  0.4255  0.2526  0.5819         present       73           60     20
+  fr primary, no fem_also_noun  shift_ori-original     intrusion -0.1073 -0.1462 -0.0710         reduces       73           60     20
+  fr primary, no fem_also_noun  shift_ori-original agreement_gap -0.0691 -0.0963 -0.0441         reduces       73           60     20
+  fr primary, no fem_also_noun  shift_ori-original invariant_gap -0.1145 -0.1844 -0.0580         reduces       73           60     20
+  fr primary, no fem_also_noun hybrid_ori-original     intrusion -0.0604 -0.1151 -0.0127         reduces       73           60     20
+  fr primary, no fem_also_noun hybrid_ori-original agreement_gap -0.0420 -0.0851 -0.0029         reduces       73           60     20
+  fr primary, no fem_also_noun hybrid_ori-original invariant_gap -0.0082 -0.0439  0.0313 no clear change       73           60     20
+lang   score  beta_std     lo    hi  n_pairs   verdict
+  es      wb    -0.145 -0.390 0.144       64 not shown
+  es glasgow    -0.097 -0.361 0.198       54 not shown
+  fr      wb    -0.068 -0.312 0.186       71 not shown
+  fr glasgow    -0.107 -0.414 0.207       55 not shown
+lang  n  term  beta     lo    hi        sig
+  es 54     D 0.055 -0.200 0.289 includes 0
+  es 54     R 0.318 -0.009 0.595 includes 0
+  es 54     H 0.162 -0.087 0.422 includes 0
+  es 54 S_bls 0.302 -0.007 0.524 includes 0
+lang    masc     fem      en  intrusion  agree_m  agree_f
+  es   ciego   ciega   blind      0.177    0.760    0.413
+  es enfermo enferma    sick      0.259    0.738    0.337
+  es    loco    loca   crazy      0.214    0.776    0.411
+  es    mudo    muda    mute      0.378    0.603    0.213
+  es    sano    sana healthy      0.337    0.722    0.299
+  es   sordo   sorda    deaf      0.244    0.688    0.344
+=== WPCUES done
+### done wordpair_cues retry
+=== AUDITFR2 done
