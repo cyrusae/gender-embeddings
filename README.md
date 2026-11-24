@@ -79,7 +79,7 @@ git -C external clone https://github.com/tolga-b/debiaswe && git -C external/deb
 **2. Pretrained embeddings** (large; into `$EMB_STORE`, default `./store`, git-ignored):
 
 ```sh
-bash scripts/fetch_embeddings.sh      # MUSE wiki.multi.*.vec + dictionaries; fastText cc.*.300.vec (~25 GB unzipped)
+bash scripts/fetch_embeddings.sh      # MUSE wiki.multi.*.vec + dictionaries + test dictionaries; fastText cc.*.300.vec (~25 GB unzipped)
 ```
 
 It also creates the symlinks the upstream notebooks expect inside `external/`.

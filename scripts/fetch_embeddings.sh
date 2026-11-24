@@ -3,6 +3,7 @@
 # then link them where each notebook expects them.
 #   Zhou et al. 2019: MUSE aligned fastText Wikipedia vectors wiki.multi.{en,es,fr,de}.vec
 #                     + MUSE bilingual dictionaries (en-es, es-en, es-fr, en-fr, fr-en)
+#                     + MUSE test dictionaries {src}-{tgt}.5000-6500.txt (translation test, zhou_sec43_44.py)
 #   Omrani Sabbaghi & Caliskan 2022: fastText Common Crawl cc.{es,fr,de,it,pl,en}.300.vec
 # Resumable (curl -C -). Sizes: MUSE ~0.63 GB each; cc ~1.3 GB gzipped, ~4.5 GB unzipped each.
 # Store location: $EMB_STORE (default ./store, git-ignored); layout matches scripts/paths.py.
@@ -17,6 +18,7 @@ for l in en es fr de; do
 done
 for d in en-es es-en es-fr en-fr fr-en; do
   get "https://dl.fbaipublicfiles.com/arrival/dictionaries/$d.txt" "$STORE/muse/dictionaries/$d.txt"
+  get "https://dl.fbaipublicfiles.com/arrival/dictionaries/$d.5000-6500.txt" "$STORE/muse/dictionaries/$d.5000-6500.txt"
 done
 for l in es fr de it pl en; do
   f="$STORE/fasttext_cc/cc.$l.300.vec"
