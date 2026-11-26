@@ -1,0 +1,77 @@
+lemma,concept_en,gloss,zipf,role,rating,en_rating,fr_rating,in_exploratory,loan,claude_suggest_unverified,pi_keep,identical_en
+sacerdote,priest,priest,4.28,Priests,0.16,0.16,0.06,True,False,,,False
+beisbolista,baseball player,"baseball player, baseballer",2.51,Baseball players,0.2,0.2,0.21,False,False,,,False
+taxista,taxi driver,taxi driver,3.76,Taxi drivers,0.2,0.2,0.18,True,False,,,False
+electricista,electrician,electrician,3.17,Electricians,0.21,0.21,0.2,True,False,,,False
+matarife,butcher,butcher; slaughterer (of animals for meat),2.1,Butchers,0.21,0.21,0.22,False,False,,,False
+púgil,boxer,"boxer, pugilist",2.45,Boxers,0.21,0.21,0.2,False,False,,,False
+soldado,soldier,soldier,4.38,Soldiers,0.22,0.22,0.1,True,False,,,False
+astronauta,astronaut,"astronaut, spaceman",3.38,Astronauts,0.23,0.23,0.18,True,False,,,False
+basquetbolista,basketball player,"basketball player, basketballer",2.36,Basketball players,0.23,0.23,0.27,False,False,,,False
+guarda,guard,"guard, ward, keeper",4.32,Guards,0.23,0.23,0.36,True,False,,,False
+piloto,pilot,pilot,4.4,Pilots,0.24,0.24,0.24,True,False,,,False
+maquinista,engineer,"engineer (Canada and the US), engine driver (Britain), train driver",3.1,Engineers,0.24,0.24,0.22,True,False,,,False
+transa,drug dealer,drug dealer,2.34,Drug dealers,0.24,0.24,0.24,False,False,drop: slang (swindler/cheat),,False
+inge,engineer,engineer,2.81,Engineers,0.24,0.24,0.22,False,True,drop: clipped colloquial form of ingeniero,,False
+baterista,drummer,drummer,3.16,Drummers,0.26,0.26,0.25,True,False,,,False
+bedel,janitor,janitor,2.28,Janitors,0.27,0.27,0.4,False,False,,,False
+golfista,golfer,golfer,2.71,Golfers,0.27,0.27,0.24,False,False,,,False
+martillero,auctioneer,auctioneer,2.2,Auctioneers,0.31,0.31,0.33,False,False,,,False
+sastre,tailor,"tailor (person who makes, repairs, or alters clothes professionally)",3.45,Tailors,0.32,0.32,0.46,True,False,,,False
+modista,tailor,"a tailor, fashion designer, or milliner",2.84,Tailors,0.32,0.32,0.46,False,False,,,False
+contrabandista,smuggler,"smuggler, contrabandist, bootlegger",2.79,Smugglers,0.32,0.32,0.23,False,False,,,False
+detective,detective,detective,3.81,Detectives,0.33,0.33,0.32,False,True,keep: Spanish word spelled as in English (flag identical_en),,True
+economista,economist,economist,4.02,Economists,0.33,0.33,0.31,True,False,,,False
+orfebre,goldsmith,goldsmith,2.47,Goldsmiths,0.33,0.33,0.38,False,False,,,False
+courier,courier,courier,2.77,Couriers,0.34,0.34,0.29,False,True,drop: English loan,,True
+estafeta,courier,courier,2.8,Couriers,0.34,0.34,0.29,False,False,"drop: mainly 'post office/mail', not a person sense",,False
+juez,judge,judge,4.83,Judges,0.34,0.34,0.34,False,False,,,False
+paracaidista,parachutist,"parachutist, skydiver",2.83,Parachutists,0.36,0.36,0.33,False,False,,,False
+surfista,surfer,surfer,2.68,Surfers,0.36,0.36,0.35,False,False,,,False
+jerarca,leader,leader; chief,2.49,Leaders,0.36,0.36,0.27,False,False,,,False
+malabarista,juggler,juggler,2.38,Jugglers,0.36,0.36,0.37,False,False,,,False
+cabecilla,leader,"leader, boss",3.06,Leaders,0.36,0.36,0.27,True,False,keep? 'ringleader' (pejorative role),,False
+financista,financial adviser,financial adviser,2.55,Financial advisers,0.36,0.36,0.32,False,False,,,False
+esgrimista,fencer,fencer,2.21,Fencers,0.36,0.36,0.38,False,False,,,False
+chef,chef,"chef, head cook",3.88,Chefs,0.37,0.37,0.3,False,True,"keep: established in Spanish, spelled as in English (flag identical_en)",,True
+guardavidas,lifeguard,lifeguard,2.24,Lifeguards,0.38,0.38,0.31,False,False,,,False
+socorrista,lifeguard,lifeguard,2.52,Lifeguards,0.38,0.38,0.31,False,False,,,False
+dentista,dentist,dentist,3.68,Dentists,0.38,0.38,0.39,True,False,,,False
+espía,spy,spy,3.88,Spies,0.38,0.38,0.29,True,False,,,False
+guionista,screenwriter,screenwriter,3.51,Screenwriters,0.4,0.4,0.31,True,False,,,False
+intendente,manager,"manager, supervisor (a person whose job is to manage a business)",4.02,Managers,0.41,0.41,0.35,False,False,,,False
+mánager,manager,manager,2.94,Managers,0.41,0.41,0.35,False,False,,,False
+informante,informant,"informant, telltale",3.55,Informants,0.42,0.42,0.4,True,False,,,False
+ortodoncista,orthodontist,orthodontist,2.22,Orthodontists,0.43,0.43,0.42,False,False,,,False
+atleta,athlete,athlete (competitor in a sport),3.83,Athletes,0.44,0.44,0.41,True,False,,,False
+archivista,archivist,archivist,2.27,Archivists,0.44,0.44,0.46,False,False,,,False
+poeta,poet,poet (person who writes poems),4.53,Poets,0.45,0.45,0.39,True,False,,,False
+runner,runner,runner (person who runs),3.2,Runners,0.46,0.46,0.45,False,True,drop: English loan,,True
+bartender,bartender,bartender,2.46,Bartenders,0.47,0.47,0.39,False,True,drop: English loan,,True
+tenista,tennis player,tennis player,3.29,Tennis players,0.47,0.47,0.44,True,False,,,False
+pariente,relative,"relative, relation (member of one's family)",3.87,Relatives,0.5,0.5,0.53,True,False,,,False
+conservacionista,conservationist,conservationist,2.54,Conservationists,0.5,0.5,0.43,False,False,,,False
+oficinista,office worker,office worker,2.8,Office workers,0.51,0.51,0.55,False,False,,,False
+artista,artist,artist,4.72,Artists,0.51,0.51,0.52,True,False,,,False
+fisioterapeuta,physiotherapist,physiotherapist,2.68,Physiotherapists,0.51,0.51,0.51,False,False,,,False
+teenager,teenager,teenager (a person between 13 and 19 years of age),2.07,Teenagers,0.52,0.52,0.52,False,True,drop: English loan,,True
+beibi,baby,baby (term of endearment),2.06,Babies,0.52,0.52,0.51,False,False,"drop: phonetic spelling of English 'baby', slang",,False
+pensionista,pensioner,pensioner,2.69,Pensioners,0.52,0.52,0.55,False,False,,,False
+pediatra,pediatrician,pediatrician,3.11,Pediatricians,0.52,0.52,0.51,True,False,,,False
+periodista,journalist,journalist,4.7,Journalists,0.53,0.53,0.46,True,False,,,False
+proyectista,designer,"designer, planner",2.38,Designers,0.53,0.53,0.44,False,False,,,False
+novelista,novelist,novelist (author of novels),3.72,Novelists,0.54,0.54,0.52,True,False,,,False
+celebrity,celebrity,celebrity,2.75,Celebrities,0.54,0.54,0.52,False,True,drop: English loan,,True
+psiquiatra,psychiatrist,psychiatrist,3.73,Psychiatrists,0.55,0.55,0.48,True,False,,,False
+intérprete,interpreter,interpreter (one who interprets speech in another language),3.83,Interpreters,0.55,0.55,0.55,True,False,,,False
+telefonista,telephone operator,"telephone operator, telephonist (person who operates a telephone switchboard)",2.39,Telephone operators,0.56,0.56,0.55,False,False,,,False
+sevillista,fan,"a fan, player, or other person associated with Sevilla FC, a football team from the Spanish city of Seville",2.36,Fans,0.56,0.56,0.62,False,False,"drop: Sevilla FC fan, not a role",,False
+xeneize,fan,"a fan, player, or someone involved with Boca Juniors, a team from Buenos Aires",2.75,Fans,0.56,0.56,0.62,False,False,"drop: Boca Juniors fan, not a role",,False
+fan,fan,fan,4.23,Fans,0.56,0.56,0.62,False,True,drop: English loan,,True
+acróbata,acrobat,acrobat,2.52,Acrobats,0.57,0.57,0.55,False,False,,,False
+violinista,violinist,violinist,3.12,Violinists,0.62,0.62,0.56,True,False,,,False
+gimnasta,gymnast,gymnast,3.0,Gymnasts,0.64,0.64,0.59,True,False,,,False
+nutricionista,nutritionist,nutritionist,3.05,Nutritionists,0.66,0.66,0.74,True,False,,,False
+recepcionista,receptionist,receptionist,3.16,Receptionists,0.75,0.75,0.74,True,False,,,False
+porrista,cheerleader,cheerleader,2.32,Cheerleaders,0.83,0.83,0.95,False,False,,,False
+cheerleader,cheerleader,cheerleader,2.04,Cheerleaders,0.83,0.83,0.95,False,True,drop: English loan,,True

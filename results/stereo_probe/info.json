@@ -1,0 +1,24 @@
+{
+ "es": {
+  "main": 46,
+  "held_out_only": 24,
+  "no_identical_en": 45,
+  "other_language_rating": 46,
+  "incl_separate_form": 56,
+  "epicene_by_gender": {
+   "f": 17,
+   "m": 17
+  }
+ },
+ "fr": {
+  "main": 52,
+  "held_out_only": 20,
+  "no_identical_en": 52,
+  "other_language_rating": 52,
+  "incl_separate_form": 55,
+  "epicene_by_gender": {
+   "m": 74,
+   "f": 23
+  }
+ }
+}

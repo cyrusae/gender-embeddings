@@ -1,0 +1,63 @@
+lemma,concept_en,gloss,zipf,role,rating,en_rating,fr_rating,in_exploratory,loan,claude_suggest_unverified,pi_keep,identical_en
+astronaute,astronaut,"astronaut (a member of the crew of a spaceship or other spacecraft, or someone trained for that purpose)",3.46,Astronauts,0.18,0.23,0.18,True,False,,,False
+drummer,drummer,drummer,2.07,Drummers,0.25,0.26,0.25,False,True,drop: English loan,,True
+maire,mayor,mayor,4.87,Mayors,0.27,0.31,0.27,True,False,,,False
+bourgmestre,mayor,mayor,3.51,Mayors,0.27,0.31,0.27,True,False,,,False
+astronome,astronomer,astronomer (one who studies astronomy),3.18,Astronomers,0.28,0.32,0.28,True,False,,,False
+diplomate,diplomat,diplomat,3.76,Diplomats,0.29,0.36,0.29,True,False,,,False
+boss,boss,boss (leader),4.21,Bosses,0.29,0.37,0.29,True,True,drop: English loan,,True
+chimiste,chemist,chemist (scientist of chemistry),3.44,Chemists,0.3,0.46,0.3,True,False,,,False
+taxidermiste,taxidermist,taxidermist,2.13,Taxidermists,0.3,0.35,0.3,False,False,,,False
+scénariste,screenwriter,"screenwriter, scriptwriter",3.68,Screenwriters,0.31,0.4,0.31,True,False,,,False
+économiste,economist,economist,3.89,Economists,0.31,0.33,0.31,True,False,,,False
+neurologue,neurologist,neurologist,3.0,Neurologists,0.32,0.42,0.32,True,False,,,False
+détective,detective,detective (police officer who looks for evidence),3.78,Detectives,0.32,0.33,0.32,True,False,,,False
+parachutiste,parachutist,parachutist,2.79,Parachutists,0.33,0.36,0.33,False,False,,,False
+projectionniste,projectionist,projectionist,2.27,Projectionists,0.33,0.44,0.33,False,False,,,False
+cycliste,cyclist,cyclist (someone who rides a bicycle),3.95,Cyclists,0.33,0.41,0.33,True,False,,,False
+géologue,geologist,geologist,3.03,Geologists,0.35,0.42,0.35,True,False,,,False
+médecin,physician,physician; (medical) doctor,4.88,Physicians,0.36,0.37,0.36,True,False,,,False
+architecte,architect,architect (a designer of buildings),4.19,Architects,0.38,0.36,0.38,True,False,,,False
+orfèvre,goldsmith,"goldsmith, silversmith, smith who works with any precious metal",2.96,Goldsmiths,0.38,0.33,0.38,False,False,,,False
+dentiste,dentist,dentist,3.7,Dentists,0.39,0.38,0.39,True,False,,,False
+poète,poet,poet,4.36,Poets,0.39,0.45,0.39,True,False,,,False
+océanographe,oceanographer,oceanographer,2.31,Oceanographers,0.4,0.47,0.4,False,False,,,False
+météorologue,meteorologist,meteorologist (person who studies meteorology),2.69,Meteorologists,0.4,0.37,0.4,False,False,,,False
+météorologiste,meteorologist,meteorologist (person who studies meteorology),2.07,Meteorologists,0.4,0.37,0.4,False,False,,,False
+philanthrope,philanthropist,philanthropist,2.9,Philanthropists,0.41,0.48,0.41,False,False,,,False
+athlète,athlete,athlete,3.98,Athletes,0.41,0.44,0.41,True,False,,,False
+orthodontiste,orthodontist,orthodontist,2.31,Orthodontists,0.42,0.43,0.42,False,False,,,False
+aubergiste,innkeeper,"innkeeper, landlord",2.87,Innkeepers,0.43,0.41,0.43,False,False,,,False
+styliste,designer,designer,3.32,Designers,0.44,0.53,0.44,True,False,,,False
+photographe,photographer,photographer,4.25,Photographers,0.45,0.46,0.45,True,False,,,False
+journaliste,journalist,a journalist,4.77,Journalists,0.46,0.53,0.46,True,False,,,False
+archiviste,archivist,archivist,3.18,Archivists,0.46,0.44,0.46,True,False,,,False
+zoologiste,zoologist,zoologist,2.26,Zoologists,0.48,0.49,0.48,False,False,,,False
+biologiste,biologist,biologist,3.32,Biologists,0.48,0.46,0.48,True,False,,,False
+psychiatre,psychiatrist,psychiatrist,3.8,Psychiatrists,0.48,0.55,0.48,True,False,,,False
+humoriste,comedian,comedian (entertainer),3.74,Comedians,0.5,0.3,0.5,True,False,,,False
+écologiste,environmentalist,environmentalist (one who advocates for the protection of the environment),3.53,Environmentalists,0.51,0.54,0.51,True,False,,,False
+physiothérapeute,physiotherapist,physiotherapist,2.3,Physiotherapists,0.51,0.51,0.51,False,False,,,False
+environnementaliste,environmentalist,environmentalist,2.41,Environmentalists,0.51,0.54,0.51,False,False,,,False
+kinésithérapeute,physiotherapist,physiotherapist,2.8,Physiotherapists,0.51,0.51,0.51,False,False,,,False
+pédiatre,pediatrician,pediatrician (physician who specialises in pediatrics),3.16,Pediatricians,0.51,0.52,0.51,True,False,,,False
+teenager,teenager,teenager,2.1,Teenagers,0.52,0.52,0.52,False,True,drop: English loan,,True
+people,celebrity,"a celebrity, celebrities, famous person(s)",4.06,Celebrities,0.52,0.54,0.52,True,True,"drop: English loan, 'celebrities' as a mass noun",,False
+nouvelliste,novelist,novelist,3.11,Novelists,0.52,0.54,0.52,True,False,,,False
+artiste,artist,artist,4.74,Artists,0.52,0.51,0.52,True,False,,,False
+acrobate,acrobat,acrobat,2.78,Acrobats,0.55,0.57,0.55,False,False,,,False
+standardiste,telephone operator,telephone operator (switchboard operator),2.42,Telephone operators,0.55,0.56,0.55,False,False,,,False
+interprète,interpreter,interpreter (as opposed to translator),4.14,Interpreters,0.55,0.55,0.55,True,False,,,False
+pensionné,pensioner,pensioner,2.16,Pensioners,0.55,0.52,0.55,False,False,keep: retiree (Belgian usage),,False
+violoniste,violinist,violinist,3.21,Violinists,0.56,0.62,0.56,True,False,,,False
+chorégraphe,choreographer,choreographer,3.35,Choreographers,0.59,0.59,0.59,True,False,,,False
+gymnaste,gymnast,gymnast,2.78,Gymnasts,0.59,0.64,0.59,False,False,,,False
+fan,fan,"fan (admirer, supporter)",4.47,Fans,0.62,0.56,0.62,True,True,drop: English loan,,True
+ergothérapeute,occupational therapist,occupational therapist,2.22,Occupational therapists,0.62,0.61,0.62,False,False,,,False
+dactylo,typist,typist,2.39,Typists,0.65,0.64,0.65,False,False,keep: typist (clipped but standard),,False
+orthophoniste,speech therapist,speech therapist,2.7,Speech therapists,0.66,0.65,0.66,False,False,,,False
+bibliothécaire,librarian,librarian,3.42,Librarians,0.67,0.67,0.67,True,False,,,False
+instit,primary school teacher,primary school teacher,2.87,Primary school teachers,0.72,0.75,0.72,False,False,keep? clipped colloquial instituteur/trice,,False
+réceptionniste,receptionist,receptionist,3.03,Receptionists,0.74,0.75,0.74,True,False,,,False
+nutritionniste,nutritionist,nutritionist (an expert or specialist in nutrition),2.92,Nutritionists,0.74,0.66,0.74,False,False,,,False
+secrétaire,secretary,secretary,4.8,Secretaries,0.82,0.75,0.82,True,False,,,False
