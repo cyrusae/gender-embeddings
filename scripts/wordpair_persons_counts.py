@@ -6,6 +6,8 @@ Same frozen nouns (data/wp_persons_{es,fr}_frozen_v1.csv; groups person / occupa
 (masculine, invariant, feminine), shares of queries in which the masculine / feminine form is the first
 word retrieved (after the cue word), is in the top ten, or ranks above the other form (a form outside the
 top 999 counts as last), and in which neither form is retrieved. No intervals (descriptive).
+Added 2026-11-26 (second run): plain translation (query = the English noun alone, as
+wordpair_persons_extra.plain) and every condition again without flagged nouns (subset "no_flags").
 
     uv run --no-project --python 3.12 --with numpy,pandas,scikit-learn python scripts/wordpair_persons_counts.py
 """
@@ -15,6 +17,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from wordpair_mechanism import rr_table
+from wordpair_persons_extra import plain
 from zhou_shift import Z, load_vec
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,21 +40,24 @@ def main():
         qs = {"masculine": [(e, x, "m") for e, x in zip(G.en, G.masc)],
               "feminine": [(e, x, "f") for e, x in zip(G.en, G.fem)],
               "invariant": [(e, x, "inv") for e, x in zip(I.en, I.masc)]}  # fmt: skip
-        for t, q in qs.items():
-            R = rr_table(en, T, en_w2i, w2i, i2w, q, occ)  # [cue, noun, 2]
-            for g in ("person", "occupation", "identity"):
-                ix = np.flatnonzero(nouns.group.to_numpy() == g)
+        flags = ["fem_also_noun", "masc_also_noun", "language_name", "masc_identical_en", "place_name"]
+        clean = ~nouns[[f for f in flags if f in nouns]].eq("True").any(axis=1).to_numpy()
+        tables = {t: rr_table(en, T, en_w2i, w2i, i2w, q, occ) for t, q in qs.items()}  # [cue, noun, 2]
+        tables["plain"] = plain(en, T, en_w2i, w2i, i2w, occ)
+        for t, R in tables.items():
+            for g, sub in [(g, sub) for g in ("person", "occupation", "identity") for sub in ("all", "no_flags")]:
+                ix = np.flatnonzero((nouns.group.to_numpy() == g) & (clean if sub == "no_flags" else True))
                 rm, rf = R[:, ix, 0].ravel(), R[:, ix, 1].ravel()
                 n = len(rm)
                 c = {"masc_top1": (rm == 1).sum(), "fem_top1": (rf == 1).sum(),
                      "masc_top10": (rm >= 0.1).sum(), "fem_top10": (rf >= 0.1).sum(),
                      "masc_wins": (rm > rf).sum(), "fem_wins": (rf > rm).sum(), "neither": ((rm == 0) & (rf == 0)).sum()}  # fmt: skip
-                rows.append({"lang": lang, "group": g, "n_nouns": len(ix), "cue_type": t, "n_queries": n,
+                rows.append({"lang": lang, "group": g, "subset": sub, "n_nouns": len(ix), "cue_type": t, "n_queries": n,
                              **{k: int(v) for k, v in c.items()}, **{f"{k}_share": v / n for k, v in c.items()}})  # fmt: skip
         print("done", lang, flush=True)
     d = pd.DataFrame(rows)
     d.to_csv(OUT / "counts.csv", index=False)
-    print(d[["lang", "group", "cue_type", "n_queries"] + [c for c in d.columns if c.endswith("_share")]].round(3).to_string(index=False))
+    print(d[["lang", "group", "subset", "cue_type", "n_queries"] + [c for c in d.columns if c.endswith("_share")]].round(3).to_string(index=False))
     print("=== WPPCOUNTS done")
 
 

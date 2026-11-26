@@ -10,3 +10,8 @@ Feminine cues, masculine form ranks above feminine / feminine above masculine:
 - Spanish: persons 40% / 52%; occupations 74% / 24%.
 - French: persons 57% / 40%; occupations 74% / 25%.
 Masculine form retrieved first under feminine cues: ES persons 24%, occupations 53%; FR 33%, 55%.
+
+**Second run (2026-11-26, 46c2a96):** adds plain translation (English noun alone, no cue) and every
+condition without flagged nouns (`subset = no_flags`). Plain translation, masculine form ranks above
+feminine: ES persons 75%, occupations 94%; FR 90%, 90%. Feminine cues without flagged nouns: ES persons
+masculine wins 37% (feminine 54%), occupations 76% (23%); FR 52% (44%), 75% (24%).
