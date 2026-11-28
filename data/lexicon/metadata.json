@@ -1,0 +1,36 @@
+{
+  "es": {
+    "url": "https://kaikki.org/dictionary/Spanish/kaikki.org-dictionary-Spanish.jsonl",
+    "dump_mtime": "2026-10-03T10:55:01+00:00",
+    "dump_sha256": "7b23a5dc004a47b63edc2e79a34b246bbf59d1a3067a1843a5c554c0e252b97c",
+    "built": "2026-10-06T14:48:21+00:00",
+    "n_lemmas": 54508,
+    "by_gender": {
+      "m": 30181,
+      "f": 19922,
+      "multi": 4405
+    },
+    "by_animacy": {
+      "inanimate": 27366,
+      "animate": 14249,
+      "uncertain": 12893
+    }
+  },
+  "fr": {
+    "url": "https://kaikki.org/dictionary/French/kaikki.org-dictionary-French.jsonl",
+    "dump_mtime": "2026-11-08T23:29:46.550000+00:00",
+    "dump_sha256": "9053b1845fb3e045fa1fbe3f749122fa43e21b49bfa741cadd50255ae6ca0126",
+    "built": "2026-11-09T04:36:17+00:00",
+    "n_lemmas": 38583,
+    "by_gender": {
+      "m": 20656,
+      "f": 15768,
+      "multi": 2159
+    },
+    "by_animacy": {
+      "inanimate": 20629,
+      "uncertain": 10325,
+      "animate": 7629
+    }
+  }
+}

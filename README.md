@@ -138,7 +138,7 @@ Frozen lists are rebuilt by `scripts/zero_ref_lists.py` (candidates, v0) and
 
 ## Unresolved (missing from this repo)
 
-- Lexicon regeneration needs the `gbleed lexicon` command from the author's research monorepo (`cyrusae/gender`, `src/gbleed/lexicon.py`), which reads the kaikki.org Wiktionary dumps; it isn't included here. The built lexicons are in `data/lexicon/`.
+- Lexicon regeneration: `scripts/lexicon_build.py` (vendored from the research monorepo's `src/gbleed/lexicon.py`) reads the kaikki.org Wiktionary dumps from `$EMB_STORE/kaikki/` (Wiktextract, Ylonen 2022) and writes `data/lexicon/` (`LEXICON_OUT` to write elsewhere); needs `pandas tqdm nltk wordfreq` (frequencies: wordfreq; animacy: WordNet via NLTK). The shipped lexicons' dump dates and hashes are in `data/lexicon/metadata.json`. Checked 2026-11-28: rebuilding Spanish from the recorded dump reproduces `es_nouns.csv` on all builder columns except one `animacy_reason` string (*parca*; animacy label unchanged). The shipped files also carry two tokenizer columns (`n_tokens_qwen3*`) from the monorepo's LLM work, unused here.
 
 ## Licences
 
